@@ -39,5 +39,9 @@ export default makeStyles((theme: Theme) =>
       }),
       marginLeft: drawerWidth,
     },
+    scatterPlots:{
+      height:300, 
+      width:400
+    }
   }),
 );
