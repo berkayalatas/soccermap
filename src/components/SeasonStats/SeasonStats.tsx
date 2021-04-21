@@ -4,12 +4,14 @@ import FilterDrawer from '../FilterDrawer/FilterDrawer';
 import SeasonStatsFilters from './SeasonStatsFilters';
 import makeStyles from './makeStyles';
 import Grid from '@material-ui/core/Grid';
-import DataPagination from './DataPagination'
+import Typography from '@material-ui/core/Typography';
+import DataPagination from './DataPagination';
 // import ScatterPlot from './ScatterPlot'
-import ScatterPlot1 from './ScatterPlot1'
-import ScatterPlot2 from './ScatterPlot2'
-import ScatterPlot3 from './ScatterPlot3'
-import ScatterPlot4 from './ScatterPlot4'
+import ScatterPlot1 from './scatterPlots/ScatterPlot1';
+import ScatterPlot2 from './scatterPlots/ScatterPlot2';
+import ScatterPlot3 from './scatterPlots/ScatterPlot3';
+import ScatterPlot4 from './scatterPlots/ScatterPlot4';
+import Papers from './Papers/SimplePaper'
 
 const SeasonStats: FunctionComponent = () => {
   const classes = makeStyles();
@@ -22,28 +24,36 @@ const SeasonStats: FunctionComponent = () => {
           [classes.contentShift]: drawerOpen,
         })}
       >
-        <h3>Edit components/SeasonStats/SeasonStats.tsx</h3>
-        <Grid container>
-          {/*<Grid item>
-              <ScatterPlot /> 
-          </Grid>*/}
-          <Grid item className={classes.scatterPlots}>
-            <ScatterPlot1 />
+        <Grid container style={{ justifyContent: 'center' }}>
+          <Grid item>
+            <Typography variant='h3' className={classes.title}>
+              Player Season Stats
+            </Typography>
           </Grid>
-          <Grid item className={classes.scatterPlots}>
-            <ScatterPlot2 />
+        </Grid>
+        <Grid container>
+          <Grid item xl={8} lg={9}>
+            <Grid container>
+              <Grid item className={classes.scatterPlots}>
+                <ScatterPlot1 />
+              </Grid>
+              <Grid item className={classes.scatterPlots}>
+                <ScatterPlot2 />
+              </Grid>
+              <Grid item className={classes.scatterPlots}>
+                <ScatterPlot3 />
+              </Grid>
+              <Grid item className={classes.scatterPlots}>
+                <ScatterPlot4 />
+              </Grid>
+            </Grid>
+          </Grid>
+
+          <Grid item xl={4} lg={3} >
+            <Papers />
           </Grid>
         </Grid>
 
-        <Grid container>
-          <Grid item className={classes.scatterPlots}>
-            <ScatterPlot3 />
-          </Grid>
-          <Grid item className={classes.scatterPlots}>
-            <ScatterPlot4 />
-          </Grid>
-        </Grid>
-       
         <DataPagination />
       </main>
       <FilterDrawer drawer={drawerOpen} setDrawer={setDrawerOpen}>

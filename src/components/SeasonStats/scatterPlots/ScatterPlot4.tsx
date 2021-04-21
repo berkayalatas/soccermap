@@ -1,11 +1,11 @@
 import { ResponsiveScatterPlot } from '@nivo/scatterplot'
-import data from './mockData/mockData4'
+import data from '../mockData/mockData4'
 
 // eslint-disable-next-line @typescript-eslint/explicit-module-boundary-types
 const ScatterPlot4 = () => (
     <ResponsiveScatterPlot
         data={data}
-        margin={{ top: 60, right: 140, bottom: 70, left: 90 }}
+        margin={{ top: 50, right: 110, bottom: 60, left: 65 }}
         xScale={{ type: 'linear', min: 0, max: 'auto' }}
         xFormat={function(e){return e+" kg"}}
         yScale={{ type: 'linear', min: 0, max: 'auto' }}
@@ -20,7 +20,7 @@ const ScatterPlot4 = () => (
             tickRotation: 0,
             legend: 'weight',
             legendPosition: 'middle',
-            legendOffset: 46
+            legendOffset: 40
         }}
         axisLeft={{
             orient: 'left',
@@ -29,7 +29,7 @@ const ScatterPlot4 = () => (
             tickRotation: 0,
             legend: 'size',
             legendPosition: 'middle',
-            legendOffset: -60
+            legendOffset: -50
         }}
         legends={[
             {

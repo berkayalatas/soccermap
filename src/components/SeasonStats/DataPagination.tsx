@@ -11,8 +11,16 @@ import TablePagination from '@material-ui/core/TablePagination';
 import Paper from '@material-ui/core/Paper';
 
 const useStyles = makeStyles({
+  tableContainer: {
+    marginTop: 10,
+  },
   table: {
     minWidth: 650,
+  },
+  cellTitle: {
+    backgroundColor: '#BEBEBE',
+    fontFamily: "'Poppins', 'sans-serif'",
+    padding: '5px 10px 5px 10px',
   },
 });
 
@@ -22,8 +30,8 @@ function createData(name: string, calories: number, fat: number, carbs: number, 
 
 /*Temp Data */
 const rows = [
-  createData('Frozen yoghurt', 159, 6.0, 24, 4.0),
-  createData('Ice cream sandwich', 237, 9.0, 37, 4.3),
+  createData('Yoghurt', 159, 6.0, 24, 4.0),
+  createData('Ice cream', 237, 9.0, 37, 4.3),
   createData('Eclair', 262, 16.0, 24, 6.0),
   createData('Cupcake', 305, 3.7, 67, 4.3),
   createData('Gingerbread', 356, 16.0, 49, 3.9),
@@ -50,39 +58,46 @@ export default function SimpleTable() {
     setPage(newPage);
   };
 
-  const handleChangeRowsPerPage = (event: { target: { value: string; }; }) => {
+  const handleChangeRowsPerPage = (event: { target: { value: string } }) => {
     setRowsPerPage(parseInt(event.target.value, 10));
     setPage(0);
   };
   const emptyRows = rowsPerPage - Math.min(rowsPerPage, rows.length - page * rowsPerPage);
 
+  const cellData = [
+    'Age',
+    'Position',
+    'Appearences',
+    'Country',
+    'League',
+    'Goal/Game',
+    'Assist/Game',
+    'Shots On Taget/Game',
+    'Tackles/Game',
+    'Blocks/Game',
+    'Duels Tot/Game',
+    'Fouls Comm/Game',
+    'Croesses Tot/Game',
+    'Dribbles Att/Game',
+    'Saves Tot/Game',
+    'Dribbles Att/Game',
+    'KeyPasses/Game',
+    'Passes Tot/Game',
+    'Passes Accuracy/Game',
+    'Oyuncu Sayisi',
+  ];
+
   return (
-    <TableContainer component={Paper}>
+    <TableContainer component={Paper} className={classes.tableContainer}>
       <Table className={classes.table} aria-label='simple table'>
         <TableHead>
           <TableRow>
-            <TableCell>Player</TableCell>
-            <TableCell align='right'>Age</TableCell>
-            <TableCell align='right'>Team</TableCell>
-            <TableCell align='right'>Position</TableCell>
-            <TableCell align='right'>Appearences</TableCell>
-            <TableCell align='right'>Country</TableCell>
-            <TableCell align='right'>League</TableCell>
-            <TableCell align='right'>Goal/Game</TableCell>
-            <TableCell align='right'>Assist/Game</TableCell>
-            <TableCell align='right'>Shots On Taget/Game</TableCell>
-            <TableCell align='right'>Tackles/Game</TableCell>
-            <TableCell align='right'>Blocks/Game</TableCell>
-            <TableCell align='right'>Duels Tot/Game</TableCell>
-            <TableCell align='right'>Fouls Comm/Game</TableCell>
-            <TableCell align='right'>Croesses Tot/Game</TableCell>
-            <TableCell align='right'>Dribbles Att/Game</TableCell>
-            <TableCell align='right'>Saves Tot/Game</TableCell>
-            <TableCell align='right'>Dribbles Att/Game</TableCell>
-            <TableCell align='right'>KeyPasses/Game</TableCell>
-            <TableCell align='right'>Passes Tot/Game</TableCell>
-            <TableCell align='right'>Passes Accuracy/Game</TableCell>
-            <TableCell align='right'>Oyuncu Sayisi</TableCell>
+            <TableCell className={classes.cellTitle}>Player</TableCell>
+            {cellData.map((cell, index) => (
+              <TableCell key={index} className={classes.cellTitle} align='right'>
+                {cell}
+              </TableCell>
+            ))}
           </TableRow>
         </TableHead>
         <TableBody>

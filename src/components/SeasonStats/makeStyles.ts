@@ -8,6 +8,11 @@ export default makeStyles((theme: Theme) =>
       fontSize: theme.typography.pxToRem(16),
       fontWeight: theme.typography.fontWeightBold,
       color: 'rgba(0,0,0,0.6)',
+      fontFamily:"'Poppins', 'sans-serif'",
+    },
+    title:{
+      fontFamily: "'Poppins', 'sans-serif'",
+      fontSize: 40
     },
     select: {
       width: '100%',
@@ -41,7 +46,7 @@ export default makeStyles((theme: Theme) =>
     },
     scatterPlots:{
       height:300, 
-      width:400
+      width:430
     }
   }),
 );
