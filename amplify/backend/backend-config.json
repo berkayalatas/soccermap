@@ -1,0 +1,17 @@
+{
+  "auth": {
+    "soccermap7e0b1b58": {
+      "service": "Cognito",
+      "providerPlugin": "awscloudformation",
+      "dependsOn": [],
+      "customAuth": false
+    }
+  },
+  "hosting": {
+    "amplifyhosting": {
+      "service": "amplifyhosting",
+      "type": "cicd",
+      "lastPushTimeStamp": "2021-04-22T21:01:58.788Z"
+    }
+  }
+}
