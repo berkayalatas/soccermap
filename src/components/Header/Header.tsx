@@ -13,7 +13,7 @@ const Header: FunctionComponent = () => {
   const largeScreen = useMediaQuery(theme.breakpoints.up('lg'));
   return (
     <Fragment>
-      <AppBar position='fixed' style={{ zIndex: 1500 }}>
+      <AppBar position='fixed' style={{ zIndex: 1500,}} className="appbar" >
         <Toolbar>
           <Grid container spacing={3} direction='row' alignItems='center' justify='space-between'>
             <Grid item md={2} xs={9}>

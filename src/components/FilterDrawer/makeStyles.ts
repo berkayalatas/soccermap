@@ -8,9 +8,13 @@ export default makeStyles((theme: Theme) =>
       position: 'absolute',
       left: '0',
       top: '0',
+      backgroundColor:"#f1f1f1",
+      color: "#004E7C"
     },
     openFilterButton: {
-      width: '160px',
+      width: '180px',
+      padding:10,
+      color: "#004E7C"
     },
     root: {
       display: 'flex',
@@ -38,9 +42,11 @@ export default makeStyles((theme: Theme) =>
     drawer: {
       width: drawerWidth,
       flexShrink: 0,
+      color:"gray"
     },
     drawerPaper: {
       width: drawerWidth,
+      backgroundColor:"#484848"
     },
     drawerHeader: {
       display: 'flex',

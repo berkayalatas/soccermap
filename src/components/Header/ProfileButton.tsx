@@ -3,7 +3,8 @@ import { IconButton, Menu, MenuItem, Grid } from '@material-ui/core';
 // import { AccountCircle } from '@material-ui/icons';
 import { NavLink } from 'react-router-dom';
 import { AppContext, AppContextType } from '../../context/AppContext';
- 
+import ExitToAppIcon from '@material-ui/icons/ExitToApp';
+import PersonIcon from '@material-ui/icons/Person';
 
 const ProfileButton: FunctionComponent = () => {
   const { app, setApp } = useContext(AppContext) as AppContextType;
@@ -49,9 +50,11 @@ const ProfileButton: FunctionComponent = () => {
           onClose={handleClose}
           style={{ zIndex: 1700 }}
         >
-          <MenuItem onClick={handleLogout}>Logout</MenuItem>
+          <MenuItem onClick={handleLogout}>
+          <ExitToAppIcon style={{marginRight:10}}/> Logout
+          </MenuItem>
           <MenuItem component={NavLink} to={'/profile'} onClick={handleClose}>
-            Profile
+            <PersonIcon style={{marginRight:10}}/> Profile
           </MenuItem>
         </Menu>
       </Grid>

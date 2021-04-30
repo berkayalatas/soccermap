@@ -5,7 +5,7 @@ import MuiAccordionDetails from '@material-ui/core/AccordionDetails';
 
 export const Accordion = withStyles(({/*theme*/}) => ({
   root: {
-    border: '1px solid rgba(0, 0, 0, 0.2)',
+    border: '3px solid rgba(0, 0, 0, 0.2)',
     borderRadius: 0,
     boxShadow: 'none',
     '&:not(:last-child)': {
@@ -17,10 +17,11 @@ export const Accordion = withStyles(({/*theme*/}) => ({
     '&$expanded': {
       margin: '0',
     },
-    transition: 'all 0.4s',
+    transition: 'all 0.3s',
+    backgroundColor:"#484848",
   },
   expanded: {
-    background: 'rgba(194, 208, 255, 0.1)',
+    background: '#878787',
   },
 }))(MuiAccordion);
 
@@ -30,13 +31,20 @@ export const AccordionSummary = withStyles(({/*theme*/}) => ({
     '&$expanded': {
       minHeight: 0,
     },
+    backgroundColor:"BEBEBE",
+ 
   },
   content: {
     '&$expanded': {
       margin: '12px 0',
+      color:"#ffff"
     },
+    
   },
-  expanded: {},
+  expanded: {
+    // backgroundColor:"#484848"
+    color:"#ffff"
+  },
 }))(MuiAccordionSummary);
 
 export const AccordionDetails = withStyles((theme) => ({
@@ -44,5 +52,6 @@ export const AccordionDetails = withStyles((theme) => ({
     display: 'block',
     padding: theme.spacing(2),
     paddingTop: 0,
+
   },
 }))(MuiAccordionDetails);

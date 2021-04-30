@@ -28,7 +28,9 @@ const FilterDrawer: FunctionComponent<Props> = ({ children, drawer, setDrawer })
         }}
       >
         <Toolbar />
-        <Button disableElevation onClick={toggleDrawer} color='primary'>
+        <Button disableElevation onClick={toggleDrawer}
+          style={{color: '#fff', backgroundColor:"#979797"}}
+        >
           <Close fontSize='large' />
           Filters
         </Button>
@@ -36,7 +38,7 @@ const FilterDrawer: FunctionComponent<Props> = ({ children, drawer, setDrawer })
       </Drawer>
       <div className={classes.openFilter}>
         <Toolbar />
-        <Button className={classes.openFilterButton} onClick={toggleDrawer} color='primary'>
+        <Button className={classes.openFilterButton} onClick={toggleDrawer}>
           Filters
           <ArrowRight />
         </Button>

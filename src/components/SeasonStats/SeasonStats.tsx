@@ -31,7 +31,7 @@ const SeasonStats: FunctionComponent = () => {
             </Typography>
           </Grid>
         </Grid>
-        <Grid container>
+        <Grid container style={{marginLeft:10}}>
           <Grid item xl={8} lg={9}>
             <Grid container>
               <Grid item className={classes.scatterPlots}>
