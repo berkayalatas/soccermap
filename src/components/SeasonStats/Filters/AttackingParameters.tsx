@@ -81,7 +81,7 @@ const AttackingParameters: FunctionComponent<FiltersProps> = ({ filters, setFilt
     <Fragment>
       {/* Goal / Game */}
       <div className={classes.sliderContainer}>
-        <Typography id='goal-game-slider' gutterBottom>
+        <Typography id='goal-game-slider' gutterBottom  className={classes.sliderTitle}>
           Goal / Game
         </Typography>
         <Slider
@@ -95,7 +95,7 @@ const AttackingParameters: FunctionComponent<FiltersProps> = ({ filters, setFilt
       </div>
       {/* Assists / Game */}
       <div className={classes.sliderContainer}>
-        <Typography id='assists-game-slider' gutterBottom>
+        <Typography id='assists-game-slider' gutterBottom className={classes.sliderTitle}>
           Assists / Game
         </Typography>
         <Slider
@@ -109,7 +109,7 @@ const AttackingParameters: FunctionComponent<FiltersProps> = ({ filters, setFilt
       </div>
       {/* Dribbles Att */}
       <div className={classes.sliderContainer}>
-        <Typography id='dribblesAtt-game-slider' gutterBottom>
+        <Typography id='dribblesAtt-game-slider' gutterBottom className={classes.sliderTitle}>
           Dribbles Att / Game
         </Typography>
         <Slider
@@ -124,7 +124,7 @@ const AttackingParameters: FunctionComponent<FiltersProps> = ({ filters, setFilt
 
       {/* Dribbles Success */}
       <div className={classes.sliderContainer}>
-        <Typography id='dribbleSucc-game-slider' gutterBottom>
+        <Typography id='dribbleSucc-game-slider' gutterBottom className={classes.sliderTitle}>
           Dribbles Succ / Game
         </Typography>
         <Slider
@@ -139,7 +139,7 @@ const AttackingParameters: FunctionComponent<FiltersProps> = ({ filters, setFilt
 
       {/* Dribbles Past */}
       <div className={classes.sliderContainer}>
-        <Typography id='dribblePast-game-slider' gutterBottom>
+        <Typography id='dribblePast-game-slider' gutterBottom className={classes.sliderTitle}>
           Dribbles Past / Game
         </Typography>
         <Slider
@@ -154,7 +154,7 @@ const AttackingParameters: FunctionComponent<FiltersProps> = ({ filters, setFilt
 
       {/* Shots Total */}
       <div className={classes.sliderContainer}>
-        <Typography id='shotsTot-game-slider' gutterBottom>
+        <Typography id='shotsTot-game-slider' gutterBottom className={classes.sliderTitle}>
           Shots Tot / Game
         </Typography>
         <Slider
@@ -169,7 +169,7 @@ const AttackingParameters: FunctionComponent<FiltersProps> = ({ filters, setFilt
 
       {/* Shots on Target */}
       <div className={classes.sliderContainer}>
-        <Typography id='shotsOnTarget-game-slider' gutterBottom>
+        <Typography id='shotsOnTarget-game-slider' gutterBottom className={classes.sliderTitle}>
           Shots on Target / Game
         </Typography>
         <Slider

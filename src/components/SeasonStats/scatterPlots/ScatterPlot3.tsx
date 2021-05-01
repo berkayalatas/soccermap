@@ -38,7 +38,7 @@ const ScatterPlot3 = () => (
                 anchor: 'bottom-right',
                 direction: 'column',
                 justify: false,
-                translateX: 130,
+                translateX: 113,
                 translateY: 0,
                 itemWidth: 100,
                 itemHeight: 12,

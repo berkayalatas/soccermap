@@ -32,7 +32,7 @@ const TeamAndPlayer: FunctionComponent<FiltersProps> = ({ filters, setFilters })
   return (
     <Fragment>
       <FormControl className={classes.select}>
-        <InputLabel id='team-select-label'>Team</InputLabel>
+        <InputLabel id='team-select-label' style={{ color: '#fff' }}>Team</InputLabel>
         <Select
           labelId='team-select-label'
           label='Team'
@@ -45,7 +45,7 @@ const TeamAndPlayer: FunctionComponent<FiltersProps> = ({ filters, setFilters })
         </Select>
       </FormControl>
       <FormControl className={classes.select}>
-        <InputLabel id='players-select-label'>Players</InputLabel>
+        <InputLabel id='players-select-label' style={{ color: '#fff' }}>Players</InputLabel>
         <Select
           labelId='players-select-label'
           label='Players'
@@ -57,11 +57,11 @@ const TeamAndPlayer: FunctionComponent<FiltersProps> = ({ filters, setFilters })
           renderValue={(selected) => (selected as string[]).join(', ')}
         >
           <MenuItem value={'Hakan Çalhanoğlu'}>
-            <Checkbox size='small' checked={filters.players.indexOf('Hakan Çalhanoğlu') > -1} />
+            <Checkbox size='small'  color="primary" checked={filters.players.indexOf('Hakan Çalhanoğlu') > -1} />
             <ListItemText primary={'Hakan Çalhanoğlu'} />
           </MenuItem>
           <MenuItem value={'Cenk Tosun'}>
-            <Checkbox size='small' checked={filters.players.indexOf('Cenk Tosun') > -1} />
+            <Checkbox size='small'  color="primary" checked={filters.players.indexOf('Cenk Tosun') > -1} />
             <ListItemText primary={'Cenk Tosun'} />
           </MenuItem>
         </Select>

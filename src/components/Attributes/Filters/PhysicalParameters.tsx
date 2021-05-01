@@ -81,7 +81,7 @@ const AttackingParameters: FunctionComponent<FiltersProps> = ({ filters, setFilt
     <Fragment>
       {/* acceleration / Game */}
       <div className={classes.sliderContainer}>
-        <Typography id='goal-game-slider' gutterBottom>
+        <Typography id='goal-game-slider' gutterBottom className={classes.sliderTitle}>
           Acceleration / Game
         </Typography>
         <Slider
@@ -95,7 +95,7 @@ const AttackingParameters: FunctionComponent<FiltersProps> = ({ filters, setFilt
       </div>
       {/* pace / Game */}
       <div className={classes.sliderContainer}>
-        <Typography id='pace-slider' gutterBottom>
+        <Typography id='pace-slider' gutterBottom className={classes.sliderTitle}>
             Pace / Game
         </Typography>
         <Slider
@@ -109,7 +109,7 @@ const AttackingParameters: FunctionComponent<FiltersProps> = ({ filters, setFilt
       </div>
       {/* jumping */}
       <div className={classes.sliderContainer}>
-        <Typography id='jumping-slider' gutterBottom>
+        <Typography id='jumping-slider' gutterBottom className={classes.sliderTitle}>
           Jumping / Game
         </Typography>
         <Slider
@@ -124,7 +124,7 @@ const AttackingParameters: FunctionComponent<FiltersProps> = ({ filters, setFilt
 
       {/* agility */}
       <div className={classes.sliderContainer}>
-        <Typography id='agility-slider' gutterBottom>
+        <Typography id='agility-slider' gutterBottom className={classes.sliderTitle}>
           Agility / Game
         </Typography>
         <Slider
@@ -139,7 +139,7 @@ const AttackingParameters: FunctionComponent<FiltersProps> = ({ filters, setFilt
 
       {/* Strength */}
       <div className={classes.sliderContainer}>
-        <Typography id='strength-slider' gutterBottom>
+        <Typography id='strength-slider' gutterBottom className={classes.sliderTitle}>
           Strength / Game
         </Typography>
         <Slider
@@ -154,7 +154,7 @@ const AttackingParameters: FunctionComponent<FiltersProps> = ({ filters, setFilt
 
       {/* Stamina */}
       <div className={classes.sliderContainer}>
-        <Typography id='stamina-slider' gutterBottom>
+        <Typography id='stamina-slider' gutterBottom className={classes.sliderTitle}>
           Stamina / Game
         </Typography>
         <Slider
@@ -169,7 +169,7 @@ const AttackingParameters: FunctionComponent<FiltersProps> = ({ filters, setFilt
 
       {/* Balance */}
       <div className={classes.sliderContainer}>
-        <Typography id='balance-slider' gutterBottom>
+        <Typography id='balance-slider' gutterBottom className={classes.sliderTitle}>
           Balance / Game
         </Typography>
         <Slider

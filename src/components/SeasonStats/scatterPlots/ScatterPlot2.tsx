@@ -5,7 +5,7 @@ import data from '../mockData/mockData2'
 const ScatterPlot2 = () => (
     <ResponsiveScatterPlot
         data={data}
-        margin={{ top: 50, right: 110, bottom: 60, left: 65 }}
+        margin={{ top: 50, right: 110, bottom: 60, left: 55 }}
         xScale={{ type: 'linear', min: 0, max: 'auto' }}
         xFormat={function(e){return e+" kg"}}
         yScale={{ type: 'linear', min: 0, max: 'auto' }}
@@ -38,7 +38,7 @@ const ScatterPlot2 = () => (
                 anchor: 'bottom-right',
                 direction: 'column',
                 justify: false,
-                translateX: 130,
+                translateX: 113,
                 translateY: 0,
                 itemWidth: 100,
                 itemHeight: 12,

@@ -53,5 +53,8 @@ export default makeStyles((theme: Theme) =>
     textField: {
       width: '25ch',
     },
+    sliderTitle : {
+      color: "#f6f6f6"
+    }
   }),
 );

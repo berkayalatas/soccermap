@@ -20,7 +20,7 @@ const Attributes: FunctionComponent = () => {
       >
         <Grid
           container
-          style={{ justifyContent: 'center', color: '#004E7C', margin: 5, padding: 5 }}
+          style={{ justifyContent: 'center', color: '#004E7C', marginBottom:5}}
         >
           <Grid item>
             <Typography variant='h3' className={classes.title}>

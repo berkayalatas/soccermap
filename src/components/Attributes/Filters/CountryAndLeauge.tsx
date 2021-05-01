@@ -62,11 +62,11 @@ const CountryAndLeauge: FunctionComponent<FiltersProps> = ({ filters, setFilters
           renderValue={(selected) => (selected as string[]).join(', ')}
         >
           <MenuItem value={'Süper Lig'}>
-            <Checkbox size='small' checked={filters.leauges.indexOf('Süper Lig') > -1} />
+            <Checkbox size='small'  color="primary" checked={filters.leauges.indexOf('Süper Lig') > -1} />
             <ListItemText primary={'Süper Lig'} />
           </MenuItem>
           <MenuItem value={'TFF 1. Lig'}>
-            <Checkbox size='small' checked={filters.leauges.indexOf('TFF 1. Lig') > -1} />
+            <Checkbox size='small'  color="primary" checked={filters.leauges.indexOf('TFF 1. Lig') > -1} />
             <ListItemText primary={'TFF 1. Lig'} />
           </MenuItem>
         </Select>

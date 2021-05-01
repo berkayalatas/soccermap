@@ -32,7 +32,7 @@ const CountryAndLeauge: FunctionComponent<FiltersProps> = ({ filters, setFilters
   return (
     <Fragment>
       <FormControl className={classes.select}>
-        <InputLabel id='country-select-label'>Country</InputLabel>
+        <InputLabel id='country-select-label' className={classes.inputLabel}>Country</InputLabel>
         <Select
           labelId='country-select-label'
           label='Country'
@@ -45,7 +45,7 @@ const CountryAndLeauge: FunctionComponent<FiltersProps> = ({ filters, setFilters
         </Select>
       </FormControl>
       <FormControl className={classes.select}>
-        <InputLabel id='leagues-select-label'>Leauges</InputLabel>
+        <InputLabel id='leagues-select-label' className={classes.inputLabel}>Leauges</InputLabel>
         <Select
           labelId='leagues-select-label'
           label='Leauges'
@@ -57,11 +57,11 @@ const CountryAndLeauge: FunctionComponent<FiltersProps> = ({ filters, setFilters
           renderValue={(selected) => (selected as string[]).join(', ')}
         >
           <MenuItem value={'Süper Lig'}>
-            <Checkbox size='small' checked={filters.leauges.indexOf('Süper Lig') > -1} />
+            <Checkbox size='small' color='primary' checked={filters.leauges.indexOf('Süper Lig') > -1} />
             <ListItemText primary={'Süper Lig'} />
           </MenuItem>
           <MenuItem value={'TFF 1. Lig'}>
-            <Checkbox size='small' checked={filters.leauges.indexOf('TFF 1. Lig') > -1} />
+            <Checkbox size='small' color='primary' checked={filters.leauges.indexOf('TFF 1. Lig') > -1} />
             <ListItemText primary={'TFF 1. Lig'} />
           </MenuItem>
         </Select>

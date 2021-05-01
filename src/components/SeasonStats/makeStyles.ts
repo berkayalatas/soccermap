@@ -8,11 +8,11 @@ export default makeStyles((theme: Theme) =>
       fontSize: theme.typography.pxToRem(16),
       fontWeight: theme.typography.fontWeightBold,
       color: '#f1f1f1',
-      fontFamily:"'Poppins', 'sans-serif'",
-    },
-    title:{
       fontFamily: "'Poppins', 'sans-serif'",
-      fontSize: 40
+    },
+    title: {
+      fontFamily: "'Poppins', 'sans-serif'",
+      fontSize: 40,
     },
     select: {
       width: '100%',
@@ -33,8 +33,8 @@ export default makeStyles((theme: Theme) =>
       }),
       marginLeft: 0,
     },
-    accordionItem : {
-      margin:8
+    accordionItem: {
+      margin: 8,
     },
     contentShift: {
       marginTop: 0,
@@ -44,9 +44,15 @@ export default makeStyles((theme: Theme) =>
       }),
       marginLeft: drawerWidth,
     },
-    scatterPlots:{
-      height:300, 
-      width:430
+    scatterPlots: {
+      height: 300,
+      width: 430,
+    },
+    inputLabel: {
+      color: '#fff',
+    },
+    sliderTitle : {
+      color: '#f6f6f6',
     }
   }),
 );

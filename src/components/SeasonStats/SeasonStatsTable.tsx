@@ -18,7 +18,8 @@ const useStyles = makeStyles({
     minWidth: 650,
   },
   cellTitle: {
-    backgroundColor: '#BEBEBE',
+    backgroundColor: '#ccc9c9',
+    color:" #004E7C",
     fontFamily: "'Poppins', 'sans-serif'",
     padding: '5px 10px 5px 10px',
   },

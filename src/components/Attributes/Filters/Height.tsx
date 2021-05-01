@@ -29,6 +29,7 @@ export default function RadioButtonsGroup() {
     <Fragment>
       <FormControl className={clsx(classes.margin, classes.withoutLabel, classes.textField)}>
         <Input
+          style={{ color: '#fff' }}
           id='standard-adornment-height'
           value={values.height}
           onChange={handleHeight('height')}
@@ -44,6 +45,7 @@ export default function RadioButtonsGroup() {
 
       <FormControl className={clsx(classes.margin, classes.withoutLabel, classes.textField)}>
         <Input
+          style={{ color: '#fff' }}
           id='standard-adornment-height2'
           value={values.height2}
           onChange={handleHeight2('height2')}

@@ -5,13 +5,13 @@ import SeasonStatsFilters from './SeasonStatsFilters';
 import makeStyles from './makeStyles';
 import Grid from '@material-ui/core/Grid';
 import Typography from '@material-ui/core/Typography';
-import DataPagination from './DataPagination';
+import DataPagination from './SeasonStatsTable';
 // import ScatterPlot from './ScatterPlot'
 import ScatterPlot1 from './scatterPlots/ScatterPlot1';
 import ScatterPlot2 from './scatterPlots/ScatterPlot2';
 import ScatterPlot3 from './scatterPlots/ScatterPlot3';
 import ScatterPlot4 from './scatterPlots/ScatterPlot4';
-import Papers from './Papers/SimplePaper'
+import Papers from './Papers/SimplePaper';
 
 const SeasonStats: FunctionComponent = () => {
   const classes = makeStyles();
@@ -26,12 +26,12 @@ const SeasonStats: FunctionComponent = () => {
       >
         <Grid container style={{ justifyContent: 'center' }}>
           <Grid item>
-            <Typography variant='h3' className={classes.title}>
+            <Typography variant='h3' className={classes.title} style={{ color: '#004E7C' }}>
               Player Season Stats
             </Typography>
           </Grid>
         </Grid>
-        <Grid container style={{marginLeft:10}}>
+        <Grid container>
           <Grid item xl={8} lg={9}>
             <Grid container>
               <Grid item className={classes.scatterPlots}>
@@ -49,7 +49,7 @@ const SeasonStats: FunctionComponent = () => {
             </Grid>
           </Grid>
 
-          <Grid item xl={4} lg={3} >
+          <Grid item xl={4} lg={3}>
             <Papers />
           </Grid>
         </Grid>

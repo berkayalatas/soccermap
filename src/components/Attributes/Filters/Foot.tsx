@@ -43,6 +43,7 @@ export default function CheckboxLabels() {
           />
         }
         label='Right'
+        style={{color:"#fff"}}
       />
 
       <FormControlLabel
@@ -57,6 +58,7 @@ export default function CheckboxLabels() {
           />
         }
         label='Left'
+        style={{color:"#fff"}}
       />
 
       <FormControlLabel
@@ -71,6 +73,7 @@ export default function CheckboxLabels() {
           />
         }
         label='Either'
+        style={{color:"#fff"}}
       />
     </FormGroup>
   );

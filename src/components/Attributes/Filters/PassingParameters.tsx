@@ -81,7 +81,7 @@ const PassingParameters: FunctionComponent<FiltersProps> = ({ filters, setFilter
     <Fragment>
       {/* passing / Game */}
       <div className={classes.sliderContainer}>
-        <Typography id='passing-slider' gutterBottom>
+        <Typography id='passing-slider' gutterBottom className={classes.sliderTitle}>
           Passing / Game
         </Typography>
         <Slider
@@ -95,7 +95,7 @@ const PassingParameters: FunctionComponent<FiltersProps> = ({ filters, setFilter
       </div>
       {/* Technique / Game */}
       <div className={classes.sliderContainer}>
-        <Typography id='technique-slider' gutterBottom>
+        <Typography id='technique-slider' gutterBottom className={classes.sliderTitle}>
           Technique / Game
         </Typography>
         <Slider
@@ -110,7 +110,7 @@ const PassingParameters: FunctionComponent<FiltersProps> = ({ filters, setFilter
 
       {/* vision / Game */}
       <div className={classes.sliderContainer}>
-        <Typography id='vision-slider' gutterBottom>
+        <Typography id='vision-slider' gutterBottom className={classes.sliderTitle}>
             Vision / Game
         </Typography>
         <Slider
@@ -125,7 +125,7 @@ const PassingParameters: FunctionComponent<FiltersProps> = ({ filters, setFilter
 
       {/* workrate */}
       <div className={classes.sliderContainer}>
-        <Typography id='workrate-slider' gutterBottom>
+        <Typography id='workrate-slider' gutterBottom className={classes.sliderTitle}>
           Workrate / Game
         </Typography>
         <Slider
@@ -140,7 +140,7 @@ const PassingParameters: FunctionComponent<FiltersProps> = ({ filters, setFilter
 
       {/* freekick */}
       <div className={classes.sliderContainer}>
-        <Typography id='freekick-slider' gutterBottom>
+        <Typography id='freekick-slider' gutterBottom className={classes.sliderTitle}>
           Freekick / Game
         </Typography>
         <Slider
@@ -155,7 +155,7 @@ const PassingParameters: FunctionComponent<FiltersProps> = ({ filters, setFilter
 
       {/* Crossing */}
       <div className={classes.sliderContainer}>
-        <Typography id='crossing-slider' gutterBottom>
+        <Typography id='crossing-slider' gutterBottom className={classes.sliderTitle}>
           Crossing / Game
         </Typography>
         <Slider
@@ -170,7 +170,7 @@ const PassingParameters: FunctionComponent<FiltersProps> = ({ filters, setFilter
 
       {/* Dribbling */}
       <div className={classes.sliderContainer}>
-        <Typography id='dribbling-slider' gutterBottom>
+        <Typography id='dribbling-slider' gutterBottom className={classes.sliderTitle}>
           Dribbling / Game
         </Typography>
         <Slider

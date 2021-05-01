@@ -86,7 +86,7 @@ const DefensiveParameters: FunctionComponent<FiltersProps> = ({ filters, setFilt
   return (
     <Fragment>
       <div className={classes.sliderContainer}>
-        <Typography id='cross-total-slider' gutterBottom>
+        <Typography id='cross-total-slider' gutterBottom className={classes.sliderTitle}>
           Blocks/Game
         </Typography>
         <Slider
@@ -100,7 +100,7 @@ const DefensiveParameters: FunctionComponent<FiltersProps> = ({ filters, setFilt
       </div>
 
       <div className={classes.sliderContainer}>
-        <Typography id='interceptions-slider' gutterBottom>
+        <Typography id='interceptions-slider' gutterBottom className={classes.sliderTitle}>
           Interceptions/Game
         </Typography>
         <Slider
@@ -115,7 +115,7 @@ const DefensiveParameters: FunctionComponent<FiltersProps> = ({ filters, setFilt
 
 
       <div className={classes.sliderContainer}>
-        <Typography id='duels-total-slider' gutterBottom>
+        <Typography id='duels-total-slider' gutterBottom className={classes.sliderTitle}>
           Duels Total/Game
         </Typography>
         <Slider
@@ -130,7 +130,7 @@ const DefensiveParameters: FunctionComponent<FiltersProps> = ({ filters, setFilt
 
 
       <div className={classes.sliderContainer}>
-        <Typography id='duels-won-slider' gutterBottom>
+        <Typography id='duels-won-slider' gutterBottom className={classes.sliderTitle}>
           Duels Won/Game
         </Typography>
         <Slider
@@ -145,7 +145,7 @@ const DefensiveParameters: FunctionComponent<FiltersProps> = ({ filters, setFilt
 
 
       <div className={classes.sliderContainer}>
-        <Typography id='tackles-slider' gutterBottom>
+        <Typography id='tackles-slider' gutterBottom className={classes.sliderTitle}>
           Tackles/Game
         </Typography>
         <Slider
@@ -160,7 +160,7 @@ const DefensiveParameters: FunctionComponent<FiltersProps> = ({ filters, setFilt
 
 
       <div className={classes.sliderContainer}>
-        <Typography id='saves-slider' gutterBottom>
+        <Typography id='saves-slider' gutterBottom className={classes.sliderTitle}>
           Saves/Game
         </Typography>
         <Slider
@@ -175,7 +175,7 @@ const DefensiveParameters: FunctionComponent<FiltersProps> = ({ filters, setFilt
 
 
       <div className={classes.sliderContainer}>
-        <Typography id='fouls-comm-slider' gutterBottom>
+        <Typography id='fouls-comm-slider' gutterBottom className={classes.sliderTitle}>
           Fouls Comm/Game
         </Typography>
         <Slider

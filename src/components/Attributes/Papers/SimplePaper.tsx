@@ -28,7 +28,6 @@ const useStyles = makeStyles((theme: Theme) =>
     },
     paperData : {
       fontFamily: "'Poppins', 'sans-serif'",
-      color: '#B73225'
     }
   }),
 );
@@ -58,7 +57,7 @@ export default function SimplePaper() {
   return (
     <div className={classes.root}>
       {paperData.map((paper, index) => (
-        <Paper elevation={4} key={index} style={{backgroundColor:"#d8d8d8"}}>
+        <Paper elevation={4} key={index} style= {{borderRadius:5}}>
           <Grid container className={classes.paper}>
             <Grid item>
               <Typography variant='overline' className={classes.paperTitle}>
@@ -74,7 +73,7 @@ export default function SimplePaper() {
         </Paper>
       ))}
 
-      <Paper elevation={4} style= {{width:"200px", backgroundColor:"#d8d8d8"}}>
+      <Paper elevation={4} style= {{width:"200px",borderRadius:5}}>
         <Grid container style={{justifyContent: 'center'}}>
           <Grid item >
             <Typography variant='overline' className={classes.paperTitle} >
