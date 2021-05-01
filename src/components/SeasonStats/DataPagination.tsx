@@ -91,7 +91,7 @@ export default function SimpleTable() {
     <TableContainer component={Paper} className={classes.tableContainer}>
       <Table className={classes.table} aria-label='simple table'>
         <TableHead>
-          <TableRow>
+          <TableRow hover> 
             <TableCell className={classes.cellTitle}>Player</TableCell>
             {cellData.map((cell, index) => (
               <TableCell key={index} className={classes.cellTitle} align='right'>
@@ -103,7 +103,7 @@ export default function SimpleTable() {
         <TableBody>
           {/* // eslint-disable-next-line @typescript-eslint/no-unused-vars */}
           {rows.slice(page * rowsPerPage, page * rowsPerPage + rowsPerPage).map((row, index) => (
-            <TableRow key={row.name}>
+            <TableRow key={row.name} hover>
               <TableCell component='th' scope='row'>
                 {row.name}
               </TableCell>
@@ -114,7 +114,7 @@ export default function SimpleTable() {
             </TableRow>
           ))}
           {emptyRows > 0 && (
-            <TableRow style={{ height: 53 * emptyRows }}>
+            <TableRow style={{ height: 53 * emptyRows }} hover>
               <TableCell colSpan={6} />
             </TableRow>
           )}

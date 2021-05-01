@@ -49,7 +49,7 @@ const SeasonStatsFilters: FunctionComponent = () => {
   };
 
   const [filters, setFilters] = useState<Filters>(defaultFilters);
-  const [expanded, setExpanded] = useState('country-and-leauge');
+  const [expanded, setExpanded] = useState('');
 
   const handleAccordion = (panel: string) => (
     event: React.ChangeEvent<unknown>,

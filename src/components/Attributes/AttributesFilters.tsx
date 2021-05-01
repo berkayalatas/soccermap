@@ -10,15 +10,9 @@ import PassingParameters from './Filters/PassingParameters';
 import AttackingParameters from './Filters/AttackingParameters';
 import { Accordion, AccordionDetails, AccordionSummary } from './Accordion';
 import { Filters } from './Filters/interfaces';
-import Radio from '@material-ui/core/Radio';
-import RadioGroup from '@material-ui/core/RadioGroup';
-import FormControlLabel from '@material-ui/core/FormControlLabel';
-import FormControl from '@material-ui/core/FormControl';
-import clsx from 'clsx';
-import Input from '@material-ui/core/Input';
-import InputAdornment from '@material-ui/core/InputAdornment';
-import Checkbox from '@material-ui/core/Checkbox';
-import FormGroup from '@material-ui/core/FormGroup';
+import Foot from './Filters/Foot'
+import AgeGroups from './Filters/AgeGroups'
+import Height from './Filters/Height'
 
 const AttributesFilters: FunctionComponent = () => {
   const classes = makeStyles();
@@ -57,24 +51,24 @@ const AttributesFilters: FunctionComponent = () => {
     },
   };
 
-  interface State {
-    height: string;
-    height2: string;
-    disabledEither: boolean;
-    disabledLeft: boolean;
-    disabledRight: boolean;
-  }
+  // interface State {
+  //   height: string;
+  //   height2: string;
+  //   disabledEither: boolean;
+  //   disabledLeft: boolean;
+  //   disabledRight: boolean;
+  // }
 
-  const [values, setValues] = useState<State>({
-    height: '',
-    height2: '',
-    disabledEither: false,
-    disabledLeft: false,
-    disabledRight: false,
-  });
+  // const [values, setValues] = useState<State>({
+  //   height: '',
+  //   height2: '',
+  //   disabledEither: false,
+  //   disabledLeft: false,
+  //   disabledRight: false,
+  // });
 
   const [filters, setFilters] = useState<Filters>(defaultFilters);
-  const [expanded, setExpanded] = useState('country-and-leauge');
+  const [expanded, setExpanded] = useState('');
 
   const handleAccordion = (panel: string) => (
     event: React.ChangeEvent<unknown>,
@@ -83,19 +77,7 @@ const AttributesFilters: FunctionComponent = () => {
     setExpanded(newExpanded ? panel : '');
   };
 
-  const [value, setValue] = useState('');
 
-  const handleAgeGroups = (event: React.ChangeEvent<HTMLInputElement>) => {
-    setValue((event.target as HTMLInputElement).value);
-  };
-
-  const handleHeight = (prop: keyof State) => (event: React.ChangeEvent<HTMLInputElement>) => {
-    setValues({ ...values, [prop]: event.target.value });
-  };
-
-  const handleHeight2 = (prop: keyof State) => (event: React.ChangeEvent<HTMLInputElement>) => {
-    setValues({ ...values, [prop]: event.target.value });
-  };
 
   return (
     <Fragment>
@@ -171,28 +153,7 @@ const AttributesFilters: FunctionComponent = () => {
           <Typography className={classes.heading}>Foot</Typography>
         </AccordionSummary>
         <AccordionDetails>
-          <FormControl component='fieldset'>
-            <FormGroup aria-label='position' row>
-              <FormControlLabel
-                value='start'
-                control={<Checkbox color='secondary' />}
-                label='Right'
-                labelPlacement='start'
-              />
-              <FormControlLabel
-                value='start'
-                control={<Checkbox color='secondary' />}
-                label='Left'
-                labelPlacement='start'
-              />
-              <FormControlLabel
-                value='start'
-                control={<Checkbox color='secondary' />}
-                label='Either'
-                labelPlacement='start'
-              />
-            </FormGroup>
-          </FormControl>
+          <Foot />
         </AccordionDetails>
       </Accordion>
 
@@ -211,19 +172,7 @@ const AttributesFilters: FunctionComponent = () => {
           <Typography className={classes.heading}>Age Groups</Typography>
         </AccordionSummary>
         <AccordionDetails>
-          <FormControl component='fieldset'>
-            <RadioGroup
-              aria-label='ageGroups'
-              name='ageGroups'
-              value={value}
-              onChange={handleAgeGroups}
-            >
-              <FormControlLabel value='17-19' control={<Radio />} label='17-19' />
-              <FormControlLabel value='20-24' control={<Radio />} label='20-24' />
-              <FormControlLabel value='25-29' control={<Radio />} label='25-29' />
-              <FormControlLabel value='30-34' control={<Radio />} label='30-34' />
-            </RadioGroup>
-          </FormControl>
+            <AgeGroups />
         </AccordionDetails>
       </Accordion>
 
@@ -242,35 +191,7 @@ const AttributesFilters: FunctionComponent = () => {
           <Typography className={classes.heading}>Height</Typography>
         </AccordionSummary>
         <AccordionDetails>
-          <FormControl className={clsx(classes.margin, classes.withoutLabel, classes.textField)}>
-            <Input
-              id='standard-adornment-height'
-              value={values.height}
-              onChange={handleHeight('height')}
-              endAdornment={<InputAdornment position='end'>cm</InputAdornment>}
-              aria-describedby='standard-height-helper-text'
-              inputProps={{
-                'aria-label': 'height',
-              }}
-              placeholder='152'
-            />
-            {/* <FormHelperText id="standard-height-helper-text">Weight</FormHelperText> */}
-          </FormControl>
-
-          <FormControl className={clsx(classes.margin, classes.withoutLabel, classes.textField)}>
-            <Input
-              id='standard-adornment-height2'
-              value={values.height2}
-              onChange={handleHeight2('height2')}
-              endAdornment={<InputAdornment position='end'>cm</InputAdornment>}
-              aria-describedby='standard-height-helper-text'
-              inputProps={{
-                'aria-label': 'height',
-              }}
-              placeholder='208'
-            />
-            {/* <FormHelperText id="standard-height-helper-text">Weight</FormHelperText> */}
-          </FormControl>
+          <Height />
         </AccordionDetails>
       </Accordion>
 

@@ -10,9 +10,10 @@ const ScatterPlot1 = () => (
         xFormat={function(e){return e+" kg"}}
         yScale={{ type: 'linear', min: 0, max: 'auto' }}
         yFormat={function(e){return e+" cm"}}
-        colors={["black","yellow","orange"]}
+        colors={[" #5C5F58","#004E7C","#B73225", "red", "#ff3a22"]}
         blendMode="multiply"
         axisTop={null}
+        nodeSize={5}
         axisRight={null}
         axisBottom={{
             orient: 'bottom',

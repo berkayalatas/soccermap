@@ -13,6 +13,7 @@ const ScatterPlot4 = () => (
         blendMode="multiply"
         axisTop={null}
         axisRight={null}
+        nodeSize={5}
         axisBottom={{
             orient: 'bottom',
             tickSize: 5,

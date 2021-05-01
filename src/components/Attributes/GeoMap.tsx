@@ -8,7 +8,7 @@ const MyResponsiveChoropleth = () => (
     data={mapData}
     features={countries.features}
     margin={{ top: 0, right: 0, bottom: 0, left: 0 }}
-    colors='RdBu'
+    colors='OrRd'
     domain={[0, 1000000]}
     unknownColor='#666666'
     label='properties.name'

@@ -5,7 +5,7 @@ const drawerWidth = 300;
 export default makeStyles((theme: Theme) =>
   createStyles({
     heading: {
-      fontSize: theme.typography.pxToRem(16),
+      fontSize: theme.typography.pxToRem(15),
       fontWeight: theme.typography.fontWeightBold,
       color: '#f1f1f1',
       fontFamily:"'Poppins', 'sans-serif'",
@@ -44,9 +44,14 @@ export default makeStyles((theme: Theme) =>
       }),
       marginLeft: drawerWidth,
     },
-    scatterPlots:{
-      height:300, 
-      width:430
-    }
+    margin: {
+      margin: theme.spacing(1),
+    },
+    withoutLabel: {
+      marginTop: theme.spacing(3),
+    },
+    textField: {
+      width: '25ch',
+    },
   }),
 );
