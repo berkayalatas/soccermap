@@ -32,7 +32,7 @@ const TeamAndPlayer: FunctionComponent<FiltersProps> = ({ filters, setFilters })
   return (
     <Fragment>
       <FormControl className={classes.select}>
-        <InputLabel id='team-select-label' className={classes.inputLabel}>
+        <InputLabel id='team-select-label' style={{color: '#fff' }}>
           Team
         </InputLabel>
         <Select
@@ -47,7 +47,7 @@ const TeamAndPlayer: FunctionComponent<FiltersProps> = ({ filters, setFilters })
         </Select>
       </FormControl>
       <FormControl className={classes.select}>
-        <InputLabel id='players-select-label' className={classes.inputLabel}>
+        <InputLabel id='players-select-label' style={{color: '#fff' }}>
           Players
         </InputLabel>
         <Select
