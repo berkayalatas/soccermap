@@ -9,18 +9,20 @@ import TableHead from '@material-ui/core/TableHead';
 import TableRow from '@material-ui/core/TableRow';
 import TablePagination from '@material-ui/core/TablePagination';
 import Paper from '@material-ui/core/Paper';
+import Divider from '@material-ui/core/Divider';
 
 const useStyles = makeStyles({
   tableContainer: {
     marginTop: 10,
+    borderRadius: 15,
   },
   table: {
     minWidth: 650,
   },
   cellTitle: {
     backgroundColor: '#ccc9c9',
-    color:" #004E7C",
-    fontFamily: "'Poppins', 'sans-serif'",
+    color: ' #004E7C',
+    fontFamily: "'Lato', 'sans-serif'",
     padding: '5px 10px 5px 10px',
   },
 });
@@ -92,10 +94,10 @@ export default function SimpleTable() {
     <TableContainer component={Paper} className={classes.tableContainer}>
       <Table className={classes.table} aria-label='simple table'>
         <TableHead>
-          <TableRow hover> 
+          <TableRow hover>
             <TableCell className={classes.cellTitle}>Player</TableCell>
             {cellData.map((cell, index) => (
-              <TableCell key={index} className={classes.cellTitle} align='right'>
+              <TableCell key={index} className={classes.cellTitle} align='center'>
                 {cell}
               </TableCell>
             ))}
@@ -108,10 +110,10 @@ export default function SimpleTable() {
               <TableCell component='th' scope='row'>
                 {row.name}
               </TableCell>
-              <TableCell align='right'>{row.calories}</TableCell>
-              <TableCell align='right'>{row.fat}</TableCell>
-              <TableCell align='right'>{row.carbs}</TableCell>
-              <TableCell align='right'>{row.protein}</TableCell>
+              <TableCell align='center'>{row.calories}</TableCell>
+              <TableCell align='center'>{row.fat}</TableCell>
+              <TableCell align='center'>{row.carbs}</TableCell>
+              <TableCell align='center'>{row.protein}</TableCell>
             </TableRow>
           ))}
           {emptyRows > 0 && (

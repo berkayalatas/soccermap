@@ -5,14 +5,14 @@ const drawerWidth = 300;
 export default makeStyles((theme: Theme) =>
   createStyles({
     heading: {
-      fontSize: theme.typography.pxToRem(15),
+      fontSize: theme.typography.pxToRem(16),
       fontWeight: theme.typography.fontWeightBold,
       color: '#f1f1f1',
-      fontFamily:"'Poppins', 'sans-serif'",
+      fontFamily: "'Lato', 'sans-serif'",
     },
-    title:{
-      fontFamily: "'Poppins', 'sans-serif'",
-      fontSize: 40
+    title: {
+      fontFamily: "'Lato', 'sans-serif'",
+      fontSize: 40,
     },
     select: {
       width: '100%',
@@ -33,8 +33,8 @@ export default makeStyles((theme: Theme) =>
       }),
       marginLeft: 0,
     },
-    accordionItem : {
-      margin:8
+    accordionItem: {
+      margin: 8,
     },
     contentShift: {
       marginTop: 0,
@@ -53,8 +53,12 @@ export default makeStyles((theme: Theme) =>
     textField: {
       width: '25ch',
     },
-    sliderTitle : {
-      color: "#f6f6f6"
-    }
+    sliderTitle: {
+      color: '#f6f6f6',
+    },
+    formControl: {
+      margin: theme.spacing(1),
+      minWidth: 180,
+    },
   }),
 );

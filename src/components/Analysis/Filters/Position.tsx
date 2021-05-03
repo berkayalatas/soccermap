@@ -23,7 +23,9 @@ const Position: FunctionComponent<FiltersProps> = ({ filters, setFilters }) => {
 
   return (
     <FormControl className={classes.select}>
-      <InputLabel id='position-select-label' style={{ color: '#fff' }}>Positions</InputLabel>
+      <InputLabel id='position-select-label' style={{ color: '#fff' }}>
+        Positions
+      </InputLabel>
       <Select
         labelId='position-select-label'
         label='Positions'
@@ -35,11 +37,19 @@ const Position: FunctionComponent<FiltersProps> = ({ filters, setFilters }) => {
         renderValue={(selected) => (selected as string[]).join(', ')}
       >
         <MenuItem value={'Forward'}>
-          <Checkbox size='small'  color="primary" checked={filters.positions.indexOf('Forward') > -1} />
+          <Checkbox
+            size='small'
+            color='primary'
+            checked={filters.positions.indexOf('Forward') > -1}
+          />
           <ListItemText primary={'Forward'} />
         </MenuItem>
         <MenuItem value={'Defense'}>
-          <Checkbox size='small'  color="primary" checked={filters.positions.indexOf('Defense') > -1} />
+          <Checkbox
+            size='small'
+            color='primary'
+            checked={filters.positions.indexOf('Defense') > -1}
+          />
           <ListItemText primary={'Defense'} />
         </MenuItem>
       </Select>

@@ -13,6 +13,7 @@ import Paper from '@material-ui/core/Paper';
 const useStyles = makeStyles({
   tableContainer: {
     marginTop: 10,
+    borderRadius:15
   },
   table: {
     minWidth: 650,
@@ -83,7 +84,7 @@ export default function SimpleTable() {
           <TableRow hover>
             <TableCell className={classes.cellTitle}>Player</TableCell>
             {cellData.map((cell, index) => (
-              <TableCell key={index} className={classes.cellTitle} >
+              <TableCell key={index} className={classes.cellTitle} align="center">
                 {cell}
               </TableCell>
             ))}
@@ -96,10 +97,10 @@ export default function SimpleTable() {
               <TableCell component='th' scope='row'>
                 {row.name}
               </TableCell>
-              <TableCell>{row.calories}</TableCell>
-              <TableCell>{row.fat}</TableCell>
-              <TableCell>{row.carbs}</TableCell>
-              <TableCell>{row.protein}</TableCell>
+              <TableCell align="center">{row.calories}</TableCell>
+              <TableCell align="center">{row.fat}</TableCell>
+              <TableCell align="center">{row.carbs}</TableCell>
+              <TableCell align="center">{row.protein}</TableCell>
             </TableRow>
           ))}
           {emptyRows > 0 && (

@@ -7,14 +7,13 @@ const useStyles = makeStyles((theme: Theme) =>
   createStyles({
     root: {
       display: 'flex',
-      justifyContent: 'flex-end',
+      justifyContent: 'center',
       flexWrap: 'wrap',
       '& > *': {
         margin: theme.spacing(1),
-        width: theme.spacing(14),
+        width: theme.spacing(15),
         height: theme.spacing(13),
       },
-      
     },
     paper: {
       display: 'flex',
@@ -23,12 +22,12 @@ const useStyles = makeStyles((theme: Theme) =>
       alignItems: 'center',
     },
     paperTitle: {
-      color: "#004E7C",
-      fontFamily: "'Poppins', 'sans-serif'",
+      color: '#004E7C',
+      fontFamily: "'Lato', 'sans-serif'",
     },
-    paperData : {
-      fontFamily: "'Poppins', 'sans-serif'",
-    }
+    paperData: {
+      fontFamily: "'Lato', 'sans-serif'",
+    },
   }),
 );
 
@@ -57,7 +56,7 @@ export default function SimplePaper() {
   return (
     <div className={classes.root}>
       {paperData.map((paper, index) => (
-        <Paper elevation={4} key={index} style= {{borderRadius:5}}>
+        <Paper elevation={4} key={index} style={{ borderRadius: 15 }}>
           <Grid container className={classes.paper}>
             <Grid item>
               <Typography variant='overline' className={classes.paperTitle}>
@@ -73,10 +72,10 @@ export default function SimplePaper() {
         </Paper>
       ))}
 
-      <Paper elevation={4} style= {{width:"200px",borderRadius:5}}>
-        <Grid container style={{justifyContent: 'center'}}>
-          <Grid item >
-            <Typography variant='overline' className={classes.paperTitle} >
+      <Paper elevation={4} style={{ width: '200px', borderRadius: 15 }}>
+        <Grid container style={{ justifyContent: 'center',alignItems:"center" }}>
+          <Grid item>
+            <Typography variant='overline' className={classes.paperTitle}>
               Expires Expires
             </Typography>
           </Grid>

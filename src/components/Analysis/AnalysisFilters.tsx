@@ -7,6 +7,7 @@ import Position from './Filters/Position';
 import TeamAndPlayer from './Filters/TeamAndPlayer';
 import { Accordion, AccordionDetails, AccordionSummary } from './Accordion';
 import { Filters } from './Filters/interfaces';
+import attackingParameters from '../../assets/icons/attackingParameters.svg'
 
 const AnalysisFilters: FunctionComponent = () => {
   const classes = makeStyles();
@@ -42,6 +43,7 @@ const AnalysisFilters: FunctionComponent = () => {
           id='country-and-leauge'
           className={classes.accordionItem}
         >
+          {/* <img src={attackingParameters} alt="attackIcon" style={{color: '#fff' }} className={classes.icons}/> */}
           <Typography className={classes.heading}>Country and Leauge</Typography>
         </AccordionSummary>
         <AccordionDetails>

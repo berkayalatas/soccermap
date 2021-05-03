@@ -15,7 +15,6 @@ const useStyles = makeStyles((theme: Theme) =>
         width: theme.spacing(13),
         height: theme.spacing(12),
       },
- 
     },
     paper: {
       display: 'flex',
@@ -24,8 +23,8 @@ const useStyles = makeStyles((theme: Theme) =>
       alignItems: 'center',
     },
     paperTitle: {
-      fontFamily: "'Poppins', 'sans-serif'",
-      color:"#004E7C"
+      fontFamily: "'Lato', 'sans-serif'",
+      color: '#004E7C',
     },
   }),
 );
@@ -37,7 +36,7 @@ export default function SimplePaper() {
   return (
     <div className={classes.root}>
       {paperData.map((paper, index) => (
-        <Paper elevation={4} key={index} style= {{borderRadius:5}}>
+        <Paper elevation={4} key={index} style={{ borderRadius: 15 }}>
           <Grid container className={classes.paper}>
             <Grid item>
               <Typography variant='overline' className={classes.paperTitle}>
@@ -45,7 +44,7 @@ export default function SimplePaper() {
               </Typography>
             </Grid>
             <Grid item>
-              <Typography variant='h4' >
+              <Typography variant='h4' style={{ fontFamily: "'Lato', 'sans-serif'" }}>
                 {paper.paperData}
               </Typography>
             </Grid>

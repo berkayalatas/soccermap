@@ -9,8 +9,8 @@ const LargeScreenHeader: FunctionComponent = () => {
   const { app } = useContext(AppContext) as AppContextType;
 
   return (
-    <Grid container direction='row' alignItems='center' justify='center' spacing={2}>
-      <Grid item xl={10} lg={9} md={9} >
+    <Grid container direction='row' alignItems='center' justify='flex-end'  spacing={2}>
+      <Grid item>
         {app.isAuthenticated ? (
           <Grid container direction='row' spacing={2} justify='center' alignItems='center'>
             {links.authenticated.map((link) => (
@@ -21,7 +21,7 @@ const LargeScreenHeader: FunctionComponent = () => {
                   to={link.href}
                   className={'unselectable'}
                   activeClassName={'link-active'}
-                  style={{margin:7}}
+                  style={{margin:5}}
                 >
                   {link.label}
                 </Link>
@@ -47,7 +47,7 @@ const LargeScreenHeader: FunctionComponent = () => {
           </Grid>
         )}
       </Grid>
-      <Grid item xl={2} lg={3} md={3} >
+      <Grid item >
         {app.isAuthenticated ? (
           <ProfileButton />
         ) : (

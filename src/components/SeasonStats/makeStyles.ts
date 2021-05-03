@@ -8,10 +8,10 @@ export default makeStyles((theme: Theme) =>
       fontSize: theme.typography.pxToRem(16),
       fontWeight: theme.typography.fontWeightBold,
       color: '#f1f1f1',
-      fontFamily: "'Poppins', 'sans-serif'",
+      fontFamily: "'Lato', 'sans-serif'",
     },
     title: {
-      fontFamily: "'Poppins', 'sans-serif'",
+      fontFamily: "'Lato', 'sans-serif'",
       fontSize: 40,
     },
     select: {
@@ -45,8 +45,8 @@ export default makeStyles((theme: Theme) =>
       marginLeft: drawerWidth,
     },
     scatterPlots: {
-      height: 300,
-      width: 430,
+      height: 350,
+      width: 400,
     },
     inputLabel: {
       color: '#fff',

@@ -10,7 +10,7 @@ import SmallScreenHeader from './SmallScreen';
 
 const Header: FunctionComponent = () => {
   const theme = useTheme();
-  const largeScreen = useMediaQuery(theme.breakpoints.up('lg'));
+  const largeScreen = useMediaQuery(theme.breakpoints.up('md'));
   return (
     <Fragment>
       <AppBar position='fixed' style={{ zIndex: 1500,}} className="appbar" >
