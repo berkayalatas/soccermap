@@ -32,7 +32,7 @@ const CountryAndLeauge: FunctionComponent<FiltersProps> = ({ filters, setFilters
   return (
     <Fragment>
       <FormControl className={classes.select}>
-        <InputLabel id='country-select-label' className={classes.inputLabel}>Country</InputLabel>
+        <InputLabel id='country-select-label' style={{color: '#fff' }}>Country</InputLabel>
         <Select
           labelId='country-select-label'
           label='Country'
@@ -45,7 +45,7 @@ const CountryAndLeauge: FunctionComponent<FiltersProps> = ({ filters, setFilters
         </Select>
       </FormControl>
       <FormControl className={classes.select}>
-        <InputLabel id='leagues-select-label' className={classes.inputLabel}>Leauges</InputLabel>
+        <InputLabel id='leagues-select-label' style={{color: '#fff' }}>Leauges</InputLabel>
         <Select
           labelId='leagues-select-label'
           label='Leauges'
