@@ -26,24 +26,28 @@ const SeasonStats: FunctionComponent = () => {
       >
         <Grid container style={{ justifyContent: 'center' }}>
           <Grid item>
-            <Typography variant='h3' className={classes.title} style={{ color: '#004E7C' }}>
+            <Typography
+              variant='h3'
+              className={classes.title}
+              style={{ color: '#004E7C', marginBottom: 10 }}
+            >
               Player Season Stats
             </Typography>
           </Grid>
         </Grid>
         <Grid container>
           <Grid item xl={8} lg={9}>
-            <Grid container>
-              <Grid item className={classes.scatterPlots}>
+            <Grid container style={{ justifyContent: 'center' }}>
+              <Grid item lg={6} md={6} sm={12} xs={12} className={classes.scatterPlots}>
                 <ScatterPlot1 />
               </Grid>
-              <Grid item className={classes.scatterPlots}>
+              <Grid item lg={6} md={6} sm={12} xs={12} className={classes.scatterPlots}>
                 <ScatterPlot2 />
               </Grid>
-              <Grid item className={classes.scatterPlots}>
+              <Grid item lg={6} md={6} sm={12} xs={12} className={classes.scatterPlots}>
                 <ScatterPlot3 />
               </Grid>
-              <Grid item className={classes.scatterPlots}>
+              <Grid item lg={6} md={6} sm={12} xs={12} className={classes.scatterPlots}>
                 <ScatterPlot4 />
               </Grid>
             </Grid>

@@ -7,7 +7,11 @@ import Position from './Filters/Position';
 import TeamAndPlayer from './Filters/TeamAndPlayer';
 import { Accordion, AccordionDetails, AccordionSummary } from './Accordion';
 import { Filters } from './Filters/interfaces';
-import attackingParameters from '../../assets/icons/attackingParameters.svg'
+import countryAndLeague from '../../assets/icons/countryAndLeague.svg';
+import position from '../../assets/icons/position.svg';
+import teamAndPlayer from '../../assets/icons/teamAndPlayer.svg';
+import PositionGroups from './Filters/PositionGroups';
+import Year from './Filters/Year'
 
 const AnalysisFilters: FunctionComponent = () => {
   const classes = makeStyles();
@@ -43,8 +47,10 @@ const AnalysisFilters: FunctionComponent = () => {
           id='country-and-leauge'
           className={classes.accordionItem}
         >
-          {/* <img src={attackingParameters} alt="attackIcon" style={{color: '#fff' }} className={classes.icons}/> */}
-          <Typography className={classes.heading}>Country and Leauge</Typography>
+          <Typography className={classes.heading}>
+            <img src={countryAndLeague} alt='attackIcon' className={classes.icons} />
+            Country and Leauge
+          </Typography>
         </AccordionSummary>
         <AccordionDetails>
           <CountryAndLeauge filters={filters} setFilters={setFilters} />
@@ -63,10 +69,32 @@ const AnalysisFilters: FunctionComponent = () => {
           aria-controls='position'
           id='position'
         >
-          <Typography className={classes.heading}>Position</Typography>
+          <Typography className={classes.heading}>
+            <img src={position} alt='attackIcon' className={classes.icons} />
+            Position
+          </Typography>
         </AccordionSummary>
         <AccordionDetails>
           <Position filters={filters} setFilters={setFilters} />
+        </AccordionDetails>
+      </Accordion>
+
+      <Accordion
+        TransitionProps={{ unmountOnExit: true }}
+        square={true}
+        expanded={expanded === 'position-groups'}
+        onChange={handleAccordion('position-groups')}
+      >
+        <AccordionSummary
+          expandIcon={<ExpandMore />}
+          aria-controls='position-groups'
+          id='position-groups'
+          className={classes.accordionItem}
+        >
+          <Typography className={classes.heading}>Position(Groups)</Typography>
+        </AccordionSummary>
+        <AccordionDetails>
+          <PositionGroups />
         </AccordionDetails>
       </Accordion>
 
@@ -82,10 +110,32 @@ const AnalysisFilters: FunctionComponent = () => {
           id='team-and-player'
           className={classes.accordionItem}
         >
-          <Typography className={classes.heading}>Team and Player</Typography>
+          <Typography className={classes.heading}>
+            <img src={teamAndPlayer} alt='attackIcon' className={classes.icons} />
+            Team and Player
+          </Typography>
         </AccordionSummary>
         <AccordionDetails>
           <TeamAndPlayer filters={filters} setFilters={setFilters} />
+        </AccordionDetails>
+      </Accordion>
+
+      <Accordion
+        TransitionProps={{ unmountOnExit: true }}
+        square={true}
+        expanded={expanded === 'year-birthday'}
+        onChange={handleAccordion('year-birthday')}
+      >
+        <AccordionSummary
+          expandIcon={<ExpandMore />}
+          aria-controls='year-birthday'
+          id='year-birthday'
+          className={classes.accordionItem}
+        >
+          <Typography className={classes.heading}>Year(Birthday)</Typography>
+        </AccordionSummary>
+        <AccordionDetails>
+          <Year />
         </AccordionDetails>
       </Accordion>
     </Fragment>

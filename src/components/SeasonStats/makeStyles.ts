@@ -45,14 +45,18 @@ export default makeStyles((theme: Theme) =>
       marginLeft: drawerWidth,
     },
     scatterPlots: {
-      height: 350,
-      width: 400,
+      height: 370,
     },
     inputLabel: {
       color: '#fff',
     },
     sliderTitle : {
       color: '#f6f6f6',
+    },
+    icons : {
+      width:"22px",
+      height:"22px",
+      marginRight:"10px"
     }
   }),
 );

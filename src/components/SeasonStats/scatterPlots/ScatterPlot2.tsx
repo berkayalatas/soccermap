@@ -12,7 +12,7 @@ const useStyles = makeStyles((theme) => ({
     flexWrap: 'wrap',
     '& > *': {
       margin: theme.spacing(1),
-      width: theme.spacing(50),
+      width: theme.spacing(52),
       height: theme.spacing(40),
     },
   },
@@ -33,7 +33,7 @@ const ScatterPlot2: FunctionComponent = () => {
       <Paper elevation={3} className={classes.paper}>
         <ResponsiveScatterPlot
           data={data}
-          margin={{ top: 50, right: 45, bottom: 60, left: 65 }}
+          margin={{ top: 35, right: 35, bottom: 60, left: 60 }}
           xScale={{ type: 'linear', min: 0, max: 'auto' }}
           xFormat={function (e) {
             return e + ' kg';

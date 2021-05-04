@@ -10,6 +10,12 @@ import PassingParameters from './Filters/PassingParameters';
 import DefensiveParamters from './Filters/DefensiveParameters';
 import { Accordion, AccordionDetails, AccordionSummary } from './Accordion';
 import { Filters } from './Filters/interfaces';
+import countryAndLeague from '../../assets/icons/countryAndLeague.svg';
+import position from '../../assets/icons/position.svg';
+import teamAndPlayer from '../../assets/icons/teamAndPlayer.svg';
+import attackingParameters from '../../assets/icons/attackingParameters.svg';
+import passingParameters from '../../assets/icons/passingParameters.svg';
+import defensiveParameters from '../../assets/icons/defensiveParameters.svg';
 
 const SeasonStatsFilters: FunctionComponent = () => {
   const classes = makeStyles();
@@ -72,7 +78,10 @@ const SeasonStatsFilters: FunctionComponent = () => {
           id='country-and-leauge'
           className={classes.accordionItem}
         >
-          <Typography className={classes.heading}>Country and Leauge</Typography>
+          <Typography className={classes.heading}>
+            <img src={countryAndLeague} alt='attackIcon' className={classes.icons} />
+            Country and Leauge
+          </Typography>
         </AccordionSummary>
         <AccordionDetails>
           <CountryAndLeauge filters={filters} setFilters={setFilters} />
@@ -90,6 +99,7 @@ const SeasonStatsFilters: FunctionComponent = () => {
           aria-controls='position'
           id='position'
         >
+          <img src={position} alt='attackIcon' className={classes.icons} />
           <Typography className={classes.heading}>Position</Typography>
         </AccordionSummary>
         <AccordionDetails>
@@ -108,6 +118,7 @@ const SeasonStatsFilters: FunctionComponent = () => {
           id='team-and-player'
           className={classes.accordionItem}
         >
+          <img src={teamAndPlayer} alt='attackIcon' className={classes.icons} />
           <Typography className={classes.heading}>Team and Player</Typography>
         </AccordionSummary>
         <AccordionDetails>
@@ -126,6 +137,7 @@ const SeasonStatsFilters: FunctionComponent = () => {
           id='attacking-parameters'
           className={classes.accordionItem}
         >
+          <img src={attackingParameters} alt='attackIcon' className={classes.icons} />
           <Typography className={classes.heading}>Attacking Parameters</Typography>
         </AccordionSummary>
         <AccordionDetails>
@@ -144,6 +156,7 @@ const SeasonStatsFilters: FunctionComponent = () => {
           id='passing-parameters'
           className={classes.accordionItem}
         >
+          <img src={passingParameters} alt='attackIcon' className={classes.icons} />
           <Typography className={classes.heading}>Passing Parameters</Typography>
         </AccordionSummary>
         <AccordionDetails>
@@ -162,6 +175,7 @@ const SeasonStatsFilters: FunctionComponent = () => {
           id='defensive-parameters'
           className={classes.accordionItem}
         >
+          <img src={defensiveParameters} alt='attackIcon' className={classes.icons} />
           <Typography className={classes.heading}>Defensive Parameters</Typography>
         </AccordionSummary>
         <AccordionDetails>

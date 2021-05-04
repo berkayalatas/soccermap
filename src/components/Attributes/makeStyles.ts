@@ -5,7 +5,7 @@ const drawerWidth = 300;
 export default makeStyles((theme: Theme) =>
   createStyles({
     heading: {
-      fontSize: theme.typography.pxToRem(16),
+      fontSize: theme.typography.pxToRem(15),
       fontWeight: theme.typography.fontWeightBold,
       color: '#f1f1f1',
       fontFamily: "'Lato', 'sans-serif'",
@@ -60,5 +60,10 @@ export default makeStyles((theme: Theme) =>
       margin: theme.spacing(1),
       minWidth: 180,
     },
+    icons : {
+      width:"21px",
+      height:"21px",
+      marginRight:"10px"
+    }
   }),
 );

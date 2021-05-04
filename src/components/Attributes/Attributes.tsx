@@ -18,10 +18,7 @@ const Attributes: FunctionComponent = () => {
           [classes.contentShift]: drawerOpen,
         })}
       >
-        <Grid
-          container
-          style={{ justifyContent: 'center', color: '#004E7C', marginBottom:5}}
-        >
+        <Grid container style={{ justifyContent: 'center', color: '#004E7C', marginBottom: 10 }}>
           <Grid item>
             <Typography variant='h3' className={classes.title}>
               Player Attributes
@@ -44,8 +41,8 @@ const Attributes: FunctionComponent = () => {
 
         <AttributesTable />
       </main>
-      <FilterDrawer drawer={drawerOpen} setDrawer={setDrawerOpen} >
-        <AttributesFilters/>
+      <FilterDrawer drawer={drawerOpen} setDrawer={setDrawerOpen}>
+        <AttributesFilters />
       </FilterDrawer>
     </Fragment>
   );

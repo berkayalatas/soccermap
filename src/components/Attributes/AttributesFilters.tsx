@@ -10,9 +10,18 @@ import PassingParameters from './Filters/PassingParameters';
 import AttackingParameters from './Filters/AttackingParameters';
 import { Accordion, AccordionDetails, AccordionSummary } from './Accordion';
 import { Filters } from './Filters/interfaces';
-import Foot from './Filters/Foot'
-import AgeGroups from './Filters/AgeGroups'
-import Height from './Filters/Height'
+import Foot from './Filters/Foot';
+import AgeGroups from './Filters/AgeGroups';
+import Height from './Filters/Height';
+import countryAndLeague from '../../assets/icons/countryAndLeague.svg';
+import position from '../../assets/icons/position.svg';
+import teamAndPlayer from '../../assets/icons/teamAndPlayer.svg';
+import foot from '../../assets/icons/foot.svg';
+import ageGroups from '../../assets/icons/ageGroups.svg';
+import height from '../../assets/icons/height.svg';
+import physicalParameters from '../../assets/icons/physicalParameters.svg';
+import passingParameters from '../../assets/icons/passingParameters.svg';
+import attackingParameters from '../../assets/icons/attackingParameters.svg';
 
 const AttributesFilters: FunctionComponent = () => {
   const classes = makeStyles();
@@ -77,8 +86,6 @@ const AttributesFilters: FunctionComponent = () => {
     setExpanded(newExpanded ? panel : '');
   };
 
-
-
   return (
     <Fragment>
       <Accordion
@@ -93,7 +100,10 @@ const AttributesFilters: FunctionComponent = () => {
           id='country-and-leauge'
           className={classes.accordionItem}
         >
-          <Typography className={classes.heading}>Country and Leauge</Typography>
+          <Typography className={classes.heading}>
+            <img src={countryAndLeague} alt='attackIcon' className={classes.icons} />
+            Country and Leauge
+          </Typography>
         </AccordionSummary>
         <AccordionDetails>
           <CountryAndLeauge filters={filters} setFilters={setFilters} />
@@ -112,7 +122,10 @@ const AttributesFilters: FunctionComponent = () => {
           aria-controls='position'
           id='position'
         >
-          <Typography className={classes.heading}>Position</Typography>
+          <Typography className={classes.heading}>
+            <img src={position} alt='attackIcon' className={classes.icons} />
+            Position
+          </Typography>
         </AccordionSummary>
         <AccordionDetails>
           <Position filters={filters} setFilters={setFilters} />
@@ -131,7 +144,10 @@ const AttributesFilters: FunctionComponent = () => {
           id='team-and-player'
           className={classes.accordionItem}
         >
-          <Typography className={classes.heading}>Team and Player</Typography>
+          <Typography className={classes.heading}>
+            <img src={teamAndPlayer} alt='attackIcon' className={classes.icons} />
+            Team and Player
+          </Typography>
         </AccordionSummary>
         <AccordionDetails>
           <TeamAndPlayer filters={filters} setFilters={setFilters} />
@@ -150,7 +166,10 @@ const AttributesFilters: FunctionComponent = () => {
           id='foot'
           className={classes.accordionItem}
         >
-          <Typography className={classes.heading}>Foot</Typography>
+          <Typography className={classes.heading}>
+            <img src={foot} alt='attackIcon' className={classes.icons} />
+            Foot
+          </Typography>
         </AccordionSummary>
         <AccordionDetails>
           <Foot />
@@ -169,10 +188,13 @@ const AttributesFilters: FunctionComponent = () => {
           id='ageGroups'
           className={classes.accordionItem}
         >
-          <Typography className={classes.heading}>Age Groups</Typography>
+          <Typography className={classes.heading}>
+            <img src={ageGroups} alt='attackIcon' className={classes.icons} />
+            Age Groups
+          </Typography>
         </AccordionSummary>
         <AccordionDetails>
-            <AgeGroups />
+          <AgeGroups />
         </AccordionDetails>
       </Accordion>
 
@@ -188,7 +210,10 @@ const AttributesFilters: FunctionComponent = () => {
           id='height'
           className={classes.accordionItem}
         >
-          <Typography className={classes.heading}>Height</Typography>
+          <Typography className={classes.heading}>
+            <img src={height} alt='attackIcon' className={classes.icons} />
+            Height
+          </Typography>
         </AccordionSummary>
         <AccordionDetails>
           <Height />
@@ -207,7 +232,10 @@ const AttributesFilters: FunctionComponent = () => {
           id='physical-parameters'
           className={classes.accordionItem}
         >
-          <Typography className={classes.heading}>Physical Parameters</Typography>
+          <Typography className={classes.heading}>
+            <img src={physicalParameters} alt='attackIcon' className={classes.icons} />
+            Physical Parameters
+          </Typography>
         </AccordionSummary>
         <AccordionDetails>
           <PhysicalParameters filters={filters} setFilters={setFilters} />
@@ -226,7 +254,10 @@ const AttributesFilters: FunctionComponent = () => {
           id='passing-parameters'
           className={classes.accordionItem}
         >
-          <Typography className={classes.heading}>Passing Parameters</Typography>
+          <Typography className={classes.heading}>
+            <img src={passingParameters} alt='attackIcon' className={classes.icons} />
+            Passing Parameters
+          </Typography>
         </AccordionSummary>
         <AccordionDetails>
           <PassingParameters filters={filters} setFilters={setFilters} />
@@ -245,7 +276,10 @@ const AttributesFilters: FunctionComponent = () => {
           id='attacking-parameters'
           className={classes.accordionItem}
         >
-          <Typography className={classes.heading}>Attacking Parameters</Typography>
+          <Typography className={classes.heading}>
+            <img src={attackingParameters} alt='attackIcon' className={classes.icons} />
+            Attacking Parameters
+          </Typography>
         </AccordionSummary>
         <AccordionDetails>
           <AttackingParameters filters={filters} setFilters={setFilters} />

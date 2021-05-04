@@ -54,8 +54,13 @@ export default makeStyles((theme: Theme) =>
       width: '25ch',
     },
     icons: {
-      width: '20px',
-      height: '20px',
+      width: '22px',
+      height: '22px',
+      marginRight: 10,
+    },
+    formControl: {
+      margin: theme.spacing(1),
+      minWidth: 180,
     },
   }),
 );

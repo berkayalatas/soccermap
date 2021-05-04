@@ -17,7 +17,7 @@ const Analysis: FunctionComponent = () => {
           [classes.contentShift]: drawerOpen,
         })}
       >
-        <Grid container style={{ justifyContent: 'center', color: '#004E7C' }}>
+        <Grid container style={{ justifyContent: 'center', color: '#004E7C', marginBottom: 10 }}>
           <Grid item>
             <Typography variant='h3' className={classes.title}>
               Comparative Analysis
