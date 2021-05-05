@@ -6,6 +6,12 @@ export interface Filters {
   positions: string[];
   team: string;
   players: string[];
+  minutesParameters: {
+    minutes: [number, number];
+  };
+  goalParameters: {
+    goalPerGame: [number, number];
+  };
 }
 
 export interface FiltersProps {

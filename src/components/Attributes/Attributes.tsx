@@ -28,7 +28,7 @@ const Attributes: FunctionComponent = () => {
         <Grid container>
           <Grid item xl={8} lg={9}>
             <Grid container style={{ justifyContent: 'center', margin: 10 }}>
-              <Grid item style={{ width: 600, height: 400 }}>
+              <Grid item style={{ width:800, height: 430 }}>
                 <GeoMap />
               </Grid>
             </Grid>

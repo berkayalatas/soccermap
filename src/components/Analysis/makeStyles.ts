@@ -62,5 +62,8 @@ export default makeStyles((theme: Theme) =>
       margin: theme.spacing(1),
       minWidth: 180,
     },
+    sliderTitle: {
+      color: '#f6f6f6',
+    },
   }),
 );

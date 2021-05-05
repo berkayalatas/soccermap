@@ -15,6 +15,7 @@ const useStyles = makeStyles((theme: Theme) =>
         width: theme.spacing(13),
         height: theme.spacing(12),
       },
+      marginTop:10
     },
     paper: {
       display: 'flex',

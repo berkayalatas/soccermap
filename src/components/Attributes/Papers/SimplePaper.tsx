@@ -8,18 +8,21 @@ const useStyles = makeStyles((theme: Theme) =>
     root: {
       display: 'flex',
       justifyContent: 'center',
+      alignItems: 'stretch',
       flexWrap: 'wrap',
       '& > *': {
         margin: theme.spacing(1),
         width: theme.spacing(15),
         height: theme.spacing(13),
       },
+      marginTop:60
     },
     paper: {
       display: 'flex',
       flexDirection: 'column',
       justifyContent: 'center',
       alignItems: 'center',
+      width:"100%"
     },
     paperTitle: {
       color: '#004E7C',
