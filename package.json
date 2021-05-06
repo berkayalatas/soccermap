@@ -11,13 +11,17 @@
     "@nivo/core": "^0.68.0",
     "@nivo/geo": "^0.68.0",
     "@nivo/scatterplot": "^0.67.0",
+    "@syncfusion/ej2-base": "^19.1.57",
+    "@syncfusion/ej2-react-charts": "^19.1.59",
     "apexcharts": "^3.26.1",
     "chart.js": "2.9.4",
     "clsx": "^1.1.1",
+    "echarts-for-react": "^3.0.1",
     "react": "^17.0.1",
     "react-chartjs-2": "^2.11.1",
     "react-dom": "^17.0.1",
     "react-router-dom": "^5.2.0",
+    "reaviz": "^10.2.1",
     "web-vitals": "^1.1.0"
   },
   "scripts": {
