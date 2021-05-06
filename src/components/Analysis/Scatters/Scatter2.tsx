@@ -12,22 +12,25 @@ const useStyles = makeStyles((theme) => ({
     flexWrap: 'wrap',
     '& > *': {
       margin: theme.spacing(1),
-      width: "100%",
-      height: "320px",
+      width: theme.spacing(45),
+      height: theme.spacing(40),
     },
+    padding:5
   },
   paper: {
     display: 'flex',
     justifyContent: 'center',
     alignItems: 'center',
     borderRadius: 20,
-    width: '95%',
+    minWidth:"95%"
   },
 }));
 
 const ScatterPlot2: FunctionComponent = () => {
   const classes = useStyles();
 
+
+  
   return (
     <div className={classes.root}>
       <Paper elevation={3} className={classes.paper}>

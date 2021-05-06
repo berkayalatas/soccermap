@@ -41,7 +41,7 @@ const Analysis: FunctionComponent = () => {
           <Grid item lg={4} md={6} sm={6} xs={12} >
             <Scatter2 />
           </Grid>
-          <Grid item lg={4} md={6} sm={6} xs={12}>
+          <Grid item lg={4} md={6} sm={6} xs={12} style={{width:400, height:300}}>
             <Scatter3 />
           </Grid>
           <Grid item lg={4} md={6} sm={6} xs={12}>

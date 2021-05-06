@@ -12,16 +12,17 @@ const useStyles = makeStyles((theme) => ({
     flexWrap: 'wrap',
     '& > *': {
       margin: theme.spacing(1),
-      width: theme.spacing(40),
+      width: theme.spacing(45),
       height: theme.spacing(40),
     },
+    padding:5
   },
   paper: {
     display: 'flex',
     justifyContent: 'center',
     alignItems: 'center',
     borderRadius: 20,
-    width: '95%',
+    minWidth:"95%"
   },
 }));
 
