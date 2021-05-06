@@ -5,6 +5,7 @@ import makeStyles from './makeStyles';
 import Grid from '@material-ui/core/Grid';
 import Typography from '@material-ui/core/Typography';
 import AnalysisFilters from './AnalysisFilters';
+import Scatter from './Scatters/Scatter';
 import Scatter1 from './Scatters/Scatter1';
 import Scatter2 from './Scatters/Scatter2';
 import Scatter3 from './Scatters/Scatter3';
@@ -14,6 +15,8 @@ import Scatter6 from './Scatters/Scatter6';
 import Scatter7 from './Scatters/Scatter7';
 import Scatter8 from './Scatters/Scatter8';
 import Scatter9 from './Scatters/Scatter9';
+import Scatter10 from './Scatters/Scatter9';
+import AnalysisTable from './AnalysisTable'
 
 const Analysis: FunctionComponent = () => {
   const classes = makeStyles();
@@ -34,18 +37,18 @@ const Analysis: FunctionComponent = () => {
           </Grid>
         </Grid>
 
-        <Grid container>
+        <Grid container> 
           <Grid item lg={4} md={6} sm={6} xs={12}>
             <Scatter1 />
           </Grid>
           <Grid item lg={4} md={6} sm={6} xs={12} >
             <Scatter2 />
           </Grid>
-          <Grid item lg={4} md={6} sm={6} xs={12} style={{width:400, height:300}}>
+          <Grid item lg={4} md={6} sm={6} xs={12} >
             <Scatter3 />
           </Grid>
           <Grid item lg={4} md={6} sm={6} xs={12}>
-            <Scatter4 />
+            <Scatter />
           </Grid>
           <Grid item lg={4} md={6} sm={6} xs={12}>
             <Scatter5 />
@@ -61,6 +64,15 @@ const Analysis: FunctionComponent = () => {
           </Grid>
           <Grid item lg={4} md={6} sm={6} xs={12}>
             <Scatter9 />
+          </Grid>
+          <Grid item lg={4} md={6} sm={6} xs={12}>
+            <AnalysisTable />
+          </Grid>
+          <Grid item lg={4} md={6} sm={6} xs={12}>
+            <Scatter4 />
+          </Grid>
+          <Grid item lg={4} md={6} sm={6} xs={12}>
+            <Scatter10 />
           </Grid>
         </Grid>
       </main>
