@@ -1,30 +1,8 @@
 import { ResponsiveScatterPlot } from '@nivo/scatterplot';
 import data from '../mockData/mockData1';
-import { makeStyles } from '@material-ui/core/styles';
+import makeStyles from '../makeStyles';
 import Paper from '@material-ui/core/Paper';
 import { FunctionComponent } from 'react';
-
-const useStyles = makeStyles((theme) => ({
-  root: {
-    display: 'flex',
-    justifyContent: 'center',
-    alignItems: 'center',
-    flexWrap: 'wrap',
-    '& > *': {
-      margin: theme.spacing(1),
-      width: theme.spacing(45),
-      height: theme.spacing(40),
-    },
-    padding:5
-  },
-  paper: {
-    display: 'flex',
-    justifyContent: 'center',
-    alignItems: 'center',
-    borderRadius: 20,
-    minWidth:"95%"
-  },
-}));
 
 // const CustomNode = ({
 //   node,
@@ -92,11 +70,11 @@ const useStyles = makeStyles((theme) => ({
 
 // eslint-disable-next-line @typescript-eslint/explicit-module-boundary-types
 const ScatterPlot1: FunctionComponent = () => {
-  const classes = useStyles();
+  const classes = makeStyles();
 
   return (
-    <div className={classes.root}>
-      <Paper elevation={3} className={classes.paper}>
+    <div className={classes.scatterRoot}>
+      <Paper elevation={3} className={classes.scatterPaper}>
         <ResponsiveScatterPlot
           data={data}
           margin={{ top: 35, right: 35, bottom: 60, left: 60 }}
@@ -108,11 +86,12 @@ const ScatterPlot1: FunctionComponent = () => {
           yFormat={function (e) {
             return e + ' cm';
           }}
-          colors={['red']}
+          colors={['#dc1703']}
           blendMode='multiply'
           axisTop={null}
-          nodeSize={6}
+          nodeSize={8}
           axisRight={null}
+          animate={false}
           axisBottom={{
             orient: 'bottom',
             tickSize: 5,
@@ -122,6 +101,8 @@ const ScatterPlot1: FunctionComponent = () => {
             legendPosition: 'middle',
             legendOffset: 40,
           }}
+          enableGridX={false}
+          enableGridY={false}
           axisLeft={{
             orient: 'left',
             tickSize: 5,
@@ -138,14 +119,12 @@ const ScatterPlot1: FunctionComponent = () => {
               style={{
                 color: 'white',
                 background: '#333',
-                padding: '12px 16px',               
+                padding: '12px 16px',
               }}
             >
               <strong>Scatter 1</strong>
               <br />
               {`player: abcd`}
-              <br />
-              {`Flag: y`}
               <br />
               {`Assist/Game: 0,31`}
               <br />

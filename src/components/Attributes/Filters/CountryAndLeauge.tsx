@@ -49,7 +49,7 @@ const CountryAndLeauge: FunctionComponent<FiltersProps> = ({ filters, setFilters
       </FormControl>
       <FormControl className={classes.select}>
         <InputLabel id='leagues-select-label' style={{ color: 'white' }}>
-          Leauges
+          Leagues
         </InputLabel>
         <Select
           labelId='leagues-select-label'

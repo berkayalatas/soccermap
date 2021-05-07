@@ -12,10 +12,10 @@ const useStyles = makeStyles((theme: Theme) =>
       flexWrap: 'wrap',
       '& > *': {
         margin: theme.spacing(1),
-        width: theme.spacing(13),
-        height: theme.spacing(12),
+        width: theme.spacing(16),
+        height: theme.spacing(14),
       },
-      marginTop:10
+      marginTop:10,
     },
     paper: {
       display: 'flex',
@@ -37,7 +37,7 @@ export default function SimplePaper() {
   return (
     <div className={classes.root}>
       {paperData.map((paper, index) => (
-        <Paper elevation={4} key={index} style={{ borderRadius: 15 }}>
+        <Paper elevation={4} key={index} style={{ width:'43%',borderRadius: 15,marginBottom:5 }}>
           <Grid container className={classes.paper}>
             <Grid item>
               <Typography variant='overline' className={classes.paperTitle}>

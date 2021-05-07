@@ -1,72 +1,91 @@
-import data from '../mockData/mockData1';
-// import { makeStyles } from '@material-ui/core/styles';
-// import Paper from '@material-ui/core/Paper';
-// import { FunctionComponent } from 'react';
-// import { ScatterPlot, ScatterSeries, ScatterPoint } from 'reaviz';
+import {
+  ChartComponent,
+  SeriesCollectionDirective,
+  SeriesDirective,
+  Inject,
+  Legend,
+  Category,
+  ScatterSeries,
+  Tooltip,
+} from '@syncfusion/ej2-react-charts';
+// import { Browser } from '@syncfusion/ej2-base';
+import { scatterData } from '../mockData/scatter-data';
+import Paper from '@material-ui/core/Paper';
+import { FunctionComponent } from 'react';
+import makeStyles from '../makeStyles';
 
-// const useStyles = makeStyles((theme) => ({
-//   root: {
-//     display: 'flex',
-//     justifyContent: 'center',
-//     alignItems: 'center',
-//     flexWrap: 'wrap',
-//     '& > *': {
-//       margin: theme.spacing(1),
-//       width: theme.spacing(45),
-//       height: theme.spacing(40),
-//     },
-//     padding: 5,
-//   },
-//   paper: {
-//     display: 'flex',
-//     justifyContent: 'center',
-//     alignItems: 'center',
-//     borderRadius: 20,
-//     minWidth: '95%',
-//   },
-// }));
+const ScatterPlot8: FunctionComponent = () => {
+  const classes = makeStyles();
 
-// const MyScatter: FunctionComponent = () => {
-//   const classes = useStyles();
+  return (
+    <div className={classes.scatterRoot}>
+      <Paper elevation={3} className={classes.scatterPaper}>
+        <ChartComponent
+          id='charts'
+          style={{
+            display: 'flex',
+            justifyContent: 'center',
+            alignItems: 'center',
+            height: '100%',
+            width: '100%', 
+            margin:10            
+          }}
+          primaryXAxis={{
+            minimum: 100,
+            maximum: 230,
+            majorGridLines: { width: 0 },
+            edgeLabelPlacement: 'Shift',
+            title: 'Assist/Game',
+          }}
+          primaryYAxis={{
+            majorTickLines: {
+              width: 0,
+            },
+            minimum: 50,
+            maximum: 80,
+            lineStyle: {
+              width: 0,
+            },
+            title: 'Goal/Game',
+            rangePadding: 'None',
+          }}
+          title='Goal vs Assist'
+          tooltip={{
+            enable: true,
+            format:
+              'Goal: <b>${point.x} lbs</b> <br/> Assist: <b>${point.y}" </b>' +
+              'player: abcd <br /> Shots/Game: 0,31  <br />' +
+              'ShoutsOnTarget: 2',
+          }}
+          chartArea={{ border: { width: 0 } }}
+        >
+          <Inject services={[ScatterSeries, Legend, Tooltip, Category]} />
+          <SeriesCollectionDirective>
+            <SeriesDirective
+              dataSource={scatterData.getMaleData}
+              width={2}
+              xName='x'
+              yName='y'
+              name='goal'
+              type='Scatter'
+              opacity={0.6}
+              
+              marker={{ visible: false, width: 10, height: 10, shape: 'Circle' }}
+            ></SeriesDirective>
+            <SeriesDirective
+              dataSource={scatterData.getFemaleData}
+              xName='x'
+              yName='y'
+              name='assist'
+              type='Scatter'
+              opacity={0.6}
+              marker={{ visible: false, width: 12, height: 12, shape: 'Diamond' }}
+            ></SeriesDirective>
+          </SeriesCollectionDirective>
+        </ChartComponent>
+      </Paper>
+    </div>
+  );
+};
 
-//   return (
-//     <div className={classes.root}>
-//       <Paper elevation={3} className={classes.paper}>
-//         <ScatterPlot
-//           height={400}
-//           width={750}
-//           data={[
-//             { key: new Date('11/29/2019'), data: 13 },
-//             { key: new Date('11/30/2019'), data: 13 },
-//             { key: new Date('12/1/2019'), data: 13 },
-//           ]}
-//           series={
-//             <ScatterSeries
-//               point={
-//                 <ScatterPoint
-//                   symbol={() => {
-//                     const d = symbol().type(symbolStar).size(175)();
-
-//                     return (
-//                       <path
-//                         // eslint-disable-next-line @typescript-eslint/no-non-null-assertion
-//                         d={d!}
-//                         style={{
-//                           fill: 'lime',
-//                           stroke: 'purple',
-//                           strokeWidth: 1.5,
-//                         }}
-//                       />
-//                     );
-//                   }}
-//                 />
-//               }
-//             />
-//           }
-//         />
-//       </Paper>
-//     </div>
-//   );
-// };
-
-// export default MyScatter;
+export default ScatterPlot8;

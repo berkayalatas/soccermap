@@ -45,7 +45,7 @@ export default makeStyles((theme: Theme) =>
       marginLeft: drawerWidth,
     },
     scatterPlots: {
-      height: 350,
+      height: 390,
     },
     inputLabel: {
       color: '#fff',

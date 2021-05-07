@@ -1,36 +1,14 @@
-import { makeStyles } from '@material-ui/core/styles';
 import Paper from '@material-ui/core/Paper';
 import { FunctionComponent } from 'react';
 import { VictoryChart, VictoryVoronoiContainer, VictoryScatter } from 'victory';
-import data from '../mockData/mockData1';
-
-const useStyles = makeStyles((theme) => ({
-  root: {
-    display: 'flex',
-    justifyContent: 'center',
-    alignItems: 'center',
-    flexWrap: 'wrap',
-    '& > *': {
-      margin: theme.spacing(1),
-      height: theme.spacing(40),
-    },
-    padding: 5,
-  },
-  paper: {
-    display: 'flex',
-    justifyContent: 'center',
-    alignItems: 'center',
-    borderRadius: 20,
-    width: '95%',
-  },
-}));
+import makeStyles from '../makeStyles';
 
 const ScatterPlot3: FunctionComponent = () => {
-  const classes = useStyles();
+  const classes = makeStyles();
 
   return (
-    <div className={classes.root}>
-      <Paper elevation={3} className={classes.paper}>
+    <div className={classes.scatterRoot}>
+      <Paper elevation={3} className={classes.scatterPaper}>
         <VictoryChart
           domain={{ y: [0, 100] }}
           containerComponent={
@@ -56,7 +34,7 @@ const ScatterPlot3: FunctionComponent = () => {
             symbol={({ datum }) => (datum.y > 3 ? 'triangleUp' : 'triangleDown')}
             size={6}
             data={[
-              { x: 0, y: 24},
+              { x: 0, y: 24 },
               { x: 20, y: 32 },
               { x: 40, y: 40 },
               { x: 60, y: 50 },

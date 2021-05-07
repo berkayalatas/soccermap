@@ -12,11 +12,11 @@ import Paper from '@material-ui/core/Paper';
 
 const useStyles = makeStyles({
   tableContainer: {
-    marginTop: 10,
-    borderRadius:15
+    marginTop: 5,
+    borderRadius:15,
   },
   table: {
-    minWidth: 300,
+    minWidth: 300,  
   },
   cellTitle: {
     backgroundColor: '#ccc9c9',
@@ -31,36 +31,36 @@ function createData(name: string, calories: number, fat: number, carbs: number) 
 
 /*Temp Data */
 const rows = [
-  createData('Yoghurt', 159, 6.0, 24),
-  createData('Ice cream', 237, 9.0, 37),
-  createData('Eclair', 262, 16.0, 24),
-  createData('Cupcake', 305, 3.7, 67),
-  createData('Gingerbread', 356, 16.0, 49),
-  createData('Gingerbread2', 356, 16.0, 49),
-  createData('Gingerbread3', 356, 16.0, 49),
-  createData('Gingerbread4', 356, 16.0, 49),
-  createData('Gingerbread5', 356, 16.0, 49),
-  createData('Gingerbread6', 356, 16.0, 49),
-  createData('Gingerbread7', 356, 16.0, 49),
-  createData('Gingerbread8', 356, 16.0, 49),
-  createData('Gingerbread9', 356, 16.0, 49),
-  createData('Gingerbread10', 356, 16.0, 49),
-  createData('Gingerbread11', 356, 16.0, 49),
-  createData('Gingerbread12', 356, 16.0, 49),
-  createData('Gingerbread13', 356, 16.0, 49),
+  createData('Lionel Messi', 30, 6.0, 24),
+  createData('Edinson Cavani', 35, 9.0, 37),
+  createData('Cristiano Ronaldo', 25, 16.0, 24),
+  createData('Neymar', 28, 3.7, 67),
+  createData('Zlatan Ibrahimović', 20, 16.0, 49),
+  createData('Gerard Piqué', 30, 16.0, 49),
+  createData('Robert Lewandowski', 33, 16.0, 49),
+  createData('Sergio Ramos', 34, 16.0, 49),
+  createData('Marcelo', 35, 16.0, 49),
+  createData('Luka Modrić', 30, 16.0, 49),
+  createData('Toni Kroos', 33, 16.0, 49),
+  createData('Eden Hazard', 25, 16.0, 49),
+  createData('Thiago Silva', 32, 16.0, 49),
+  createData('Dani Alves', 35, 16.0, 49),
+  createData('Gareth Bale', 25, 16.0, 49),
+  createData('Karim Benzema', 28, 16.0, 49),
+  createData('James Rodríguez', 29, 16.0, 49),
 ];
 
 // eslint-disable-next-line @typescript-eslint/explicit-module-boundary-types
 export default function SimpleTable() {
   const classes = useStyles();
   const [page, setPage] = React.useState(0);
-  const [rowsPerPage, setRowsPerPage] = React.useState(10);
+  const [rowsPerPage, setRowsPerPage] = React.useState(5);
   const handleChangePage = (event: unknown, newPage: React.SetStateAction<number>) => {
     setPage(newPage);
   };
 
   const handleChangeRowsPerPage = (event: { target: { value: string } }) => {
-    setRowsPerPage(parseInt(event.target.value, 10));
+    setRowsPerPage(parseInt(event.target.value, 5));
     setPage(0);
   };
   const emptyRows = rowsPerPage - Math.min(rowsPerPage, rows.length - page * rowsPerPage);
@@ -97,14 +97,14 @@ export default function SimpleTable() {
             </TableRow>
           ))}
           {emptyRows > 0 && (
-            <TableRow style={{ height: 53 * emptyRows }}>
-              <TableCell colSpan={6} />
+            <TableRow >
+              <TableCell colSpan={6}  style={{ height: 39 * emptyRows }}/>
             </TableRow>
           )}
         </TableBody>
       </Table>
       <TablePagination
-        rowsPerPageOptions={[5, 10]}
+        rowsPerPageOptions={[5]}
         component='div'
         count={rows.length}
         rowsPerPage={rowsPerPage}

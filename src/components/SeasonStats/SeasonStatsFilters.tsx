@@ -80,7 +80,7 @@ const SeasonStatsFilters: FunctionComponent = () => {
         >
           <Typography className={classes.heading}>
             <img src={countryAndLeague} alt='attackIcon' className={classes.icons} />
-            Country and Leauge
+            Country and League
           </Typography>
         </AccordionSummary>
         <AccordionDetails>

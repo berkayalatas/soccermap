@@ -65,5 +65,25 @@ export default makeStyles((theme: Theme) =>
     sliderTitle: {
       color: '#f6f6f6',
     },
+    /*ANALYSIS SCATTER PLOTS*/
+    scatterRoot: {
+      display: 'flex',
+      justifyContent: 'center',
+      alignItems: 'center',
+      flexWrap: 'wrap',
+      '& > *': {
+        margin: theme.spacing(1),
+        width: theme.spacing(47),
+        height: theme.spacing(45),
+      },
+      padding:5
+    },
+    scatterPaper: {
+      display: 'flex',
+      justifyContent: 'center',
+      alignItems: 'center',
+      borderRadius: 20,
+      width: '100%',
+    },
   }),
 );

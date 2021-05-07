@@ -13,15 +13,16 @@ const useStyles = makeStyles((theme) => ({
     '& > *': {
       margin: theme.spacing(1),
       width: theme.spacing(45),
-      height: theme.spacing(40),
+      height: theme.spacing(45),
     },
+    padding:5
   },
   paper: {
     display: 'flex',
     justifyContent: 'center',
     alignItems: 'center',
     borderRadius: 20,
-    width:"95%"
+    width:"100%"
   },
 }));
 

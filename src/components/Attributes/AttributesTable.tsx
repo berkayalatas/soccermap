@@ -13,7 +13,8 @@ import Paper from '@material-ui/core/Paper';
 const useStyles = makeStyles({
   tableContainer: {
     marginTop: 10,
-    borderRadius:15
+    borderRadius:15,
+    width:'99%'
   },
   table: {
     minWidth: 650,
@@ -32,23 +33,23 @@ function createData(name: string, calories: number, fat: number, carbs: number, 
 
 /*Temp Data */
 const rows = [
-  createData('Yoghurt', 159, 6.0, 24, 4.0),
-  createData('Ice cream', 237, 9.0, 37, 4.3),
-  createData('Eclair', 262, 16.0, 24, 6.0),
-  createData('Cupcake', 305, 3.7, 67, 4.3),
-  createData('Gingerbread', 356, 16.0, 49, 3.9),
-  createData('Gingerbread2', 356, 16.0, 49, 3.9),
-  createData('Gingerbread3', 356, 16.0, 49, 3.9),
-  createData('Gingerbread4', 356, 16.0, 49, 3.9),
-  createData('Gingerbread5', 356, 16.0, 49, 3.9),
-  createData('Gingerbread6', 356, 16.0, 49, 3.9),
-  createData('Gingerbread7', 356, 16.0, 49, 3.9),
-  createData('Gingerbread8', 356, 16.0, 49, 3.9),
-  createData('Gingerbread9', 356, 16.0, 49, 3.9),
-  createData('Gingerbread10', 356, 16.0, 49, 3.9),
-  createData('Gingerbread11', 356, 16.0, 49, 3.9),
-  createData('Gingerbread12', 356, 16.0, 49, 3.9),
-  createData('Gingerbread13', 356, 16.0, 49, 3.9),
+  createData('Lionel Messi', 25, 6.0, 24, 4.0),
+  createData('Edinson Cavani', 30, 9.0, 37, 4.3),
+  createData('Cristiano Ronaldo', 28, 16.0, 24, 6.0),
+  createData('Neymar', 30, 3.7, 67, 4.3),
+  createData('Zlatan Ibrahimović', 35, 16.0, 49, 3.9),
+  createData('Gerard Piqué', 33, 16.0, 49, 3.9),
+  createData('Robert Lewandowski', 33, 16.0, 49, 3.9),
+  createData('Sergio Ramos', 32, 16.0, 49, 3.9),
+  createData('Marcelo', 31, 16.0, 49, 3.9),
+  createData('Luka Modrić', 30, 16.0, 49, 3.9),
+  createData('Toni Kroos', 29, 16.0, 49, 3.9),
+  createData('Eden Hazard', 28, 16.0, 49, 3.9),
+  createData('Thiago Silva', 24, 16.0, 49, 3.9),
+  createData('Dani Alves', 36, 16.0, 49, 3.9),
+  createData('Gareth Bale', 29, 16.0, 49, 3.9),
+  createData('Karim Benzema', 28, 16.0, 49, 3.9),
+  createData('James Rodríguez', 34, 16.0, 49, 3.9),
 ];
 
 // eslint-disable-next-line @typescript-eslint/explicit-module-boundary-types

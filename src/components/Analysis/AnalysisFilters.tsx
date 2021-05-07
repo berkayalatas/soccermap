@@ -65,7 +65,7 @@ const AnalysisFilters: FunctionComponent = () => {
         >
           <Typography className={classes.heading}>
             <img src={countryAndLeague} alt='countryAndLeague' className={classes.icons} />
-            Country and Leauge
+            Country and League
           </Typography>
         </AccordionSummary>
         <AccordionDetails>
