@@ -1,0 +1,13 @@
+export { default as ProtectedRoute } from './ProtectedRoute/ProtectedRoute';
+export { default as HeaderComponent } from './Header/Header';
+export { default as Features } from './Features/Features';
+export { default as Pricing } from './Pricing/Pricing';
+export { default as AboutUs } from './AboutUs/AboutUs';
+export { default as Landing } from './Landing/Landing';
+export { default as Login } from './Login/Login';
+export { default as Register } from './Register/Register';
+export { default as SeasonStats } from './SeasonStats/SeasonStats';
+export { default as Profiling } from './Profiling/Profiling';
+export { default as Profile } from './Profile/Profile';
+export { default as Analysis } from './Analysis/Analysis';
+export { default as Attributes } from './Attributes/Attributes';

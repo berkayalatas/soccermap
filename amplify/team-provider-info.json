@@ -1,0 +1,26 @@
+{
+    "dev": {
+        "awscloudformation": {
+            "AuthRoleName": "amplify-soccermap-dev-232027-authRole",
+            "UnauthRoleArn": "arn:aws:iam::521228308202:role/amplify-soccermap-dev-232027-unauthRole",
+            "AuthRoleArn": "arn:aws:iam::521228308202:role/amplify-soccermap-dev-232027-authRole",
+            "Region": "eu-central-1",
+            "DeploymentBucketName": "amplify-soccermap-dev-232027-deployment",
+            "UnauthRoleName": "amplify-soccermap-dev-232027-unauthRole",
+            "StackName": "amplify-soccermap-dev-232027",
+            "StackId": "arn:aws:cloudformation:eu-central-1:521228308202:stack/amplify-soccermap-dev-232027/2f5895e0-a3a8-11eb-a044-0a172eaef98a",
+            "AmplifyAppId": "d3io6ceugd5gc4"
+        },
+        "categories": {
+            "auth": {
+                "soccermap7e0b1b58": {}
+            },
+            "hosting": {
+                "amplifyhosting": {
+                    "appId": "d3io6ceugd5gc4",
+                    "type": "cicd"
+                }
+            }
+        }
+    }
+}
