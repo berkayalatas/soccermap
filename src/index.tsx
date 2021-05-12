@@ -3,6 +3,20 @@ import ReactDOM from 'react-dom';
 import App from './App';
 import reportWebVitals from './reportWebVitals';
 import './assets/styles/index.css';
+import config from './config.json';
+import Amplify from 'aws-amplify';
+
+
+Amplify.configure({
+    API: {
+      endpoints: [
+        {
+          name: config.api.API_NAME,
+          endpoint: config.api.ENDPOINT,
+        },
+      ],
+    },
+  });
 
 ReactDOM.render(<App />, document.getElementById('root'));
 

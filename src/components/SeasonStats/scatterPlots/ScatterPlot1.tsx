@@ -14,14 +14,14 @@ const useStyles = makeStyles((theme) => ({
       margin: theme.spacing(1),
       height: theme.spacing(45),
     },
-    padding:5
+    padding: 5,
   },
   paper: {
     display: 'flex',
     justifyContent: 'center',
     alignItems: 'center',
     borderRadius: 20,
-    width:"100%"
+    width: '100%',
   },
 }));
 
@@ -48,24 +48,24 @@ const ScatterPlot1: FunctionComponent = () => {
           axisTop={null}
           nodeSize={5}
           axisRight={null}
-          axisBottom={{
-            orient: 'bottom',
-            tickSize: 5,
-            tickPadding: 5,
-            tickRotation: 0,
-            legend: 'weight',
-            legendPosition: 'middle',
-            legendOffset: 40,
-          }}
-          axisLeft={{
-            orient: 'left',
-            tickSize: 5,
-            tickPadding: 5,
-            tickRotation: 0,
-            legend: 'size',
-            legendPosition: 'middle',
-            legendOffset: -50,
-          }}
+          // axisBottom={{
+          //   orient: 'bottom',
+          //   tickSize: 5,
+          //   tickPadding: 5,
+          //   tickRotation: 0,
+          //   legend: 'weight',
+          //   legendPosition: 'middle',
+          //   legendOffset: 40,
+          // }}
+          // axisLeft={{
+          //   orient: 'left',
+          //   tickSize: 5,
+          //   tickPadding: 5,
+          //   tickRotation: 0,
+          //   legend: 'size',
+          //   legendPosition: 'middle',
+          //   legendOffset: -50,
+          // }}
           legends={[]}
         />
       </Paper>

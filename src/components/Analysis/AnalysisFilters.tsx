@@ -1,45 +1,88 @@
-import { Fragment, FunctionComponent, useState } from 'react';
 import { Typography } from '@material-ui/core';
 import { ExpandMore } from '@material-ui/icons';
-import makeStyles from './makeStyles';
-import CountryAndLeauge from './Filters/CountryAndLeauge';
-import Position from './Filters/Position';
-import TeamAndPlayer from './Filters/TeamAndPlayer';
-import { Accordion, AccordionDetails, AccordionSummary } from './Accordion';
-import { Filters } from './Filters/interfaces';
-import countryAndLeague from '../../assets/icons/countryAndLeague.svg';
-import position from '../../assets/icons/position.svg';
-import teamAndPlayer from '../../assets/icons/teamAndPlayer.svg';
-import PositionGroups from './Filters/PositionGroups';
-import Year from './Filters/Year';
-import positionGroups from '../../assets/icons/positionGroups.svg';
+import { API } from 'aws-amplify';
+import { Fragment, FunctionComponent, useEffect, useState } from 'react';
 import ageGroups from '../../assets/icons/ageGroups.svg';
-import Height from './Filters/Height';
+import countryAndLeague from '../../assets/icons/countryAndLeague.svg';
+import goals from '../../assets/icons/goals.svg';
 import height from '../../assets/icons/height.svg';
-import Pace from './Filters/Pace';
-import pace from '../../assets/icons/pace.svg';
-import minutes from '../../assets/icons/minutes.svg'
-import goals from '../../assets/icons/goals.svg'
-import Minutes from './Filters/Minutes'
-import GoalPerGame from './Filters/GoalPerGame'
+import minutes from '../../assets/icons/minutes.svg';
+import position from '../../assets/icons/position.svg';
+import positionGroups from '../../assets/icons/positionGroups.svg';
+import teamAndPlayer from '../../assets/icons/teamAndPlayer.svg';
+import config from '../../config.json';
+import { Accordion, AccordionDetails, AccordionSummary } from './Accordion';
+import { defaultPositionGroups, defaultPositions } from './defaultData';
+import Age from './Filters/Age';
+import CountryAndLeauge from './Filters/CountryAndLeauge';
+import GoalPerGame from './Filters/GoalPerGame';
+import Height from './Filters/Height';
+import Minutes from './Filters/Minutes';
+import Position from './Filters/Position';
+import PositionGroups from './Filters/PositionGroups';
+import TeamAndPlayer from './Filters/TeamAndPlayer';
+import makeStyles from './makeStyles';
 
 const AnalysisFilters: FunctionComponent = () => {
   const classes = makeStyles();
-  const defaultFilters: Filters = {
+  const defaultFilters = {
     country: '',
     leauges: [],
     positions: [],
     team: '',
     players: [],
-    minutesParameters: {
-      minutes: [0, 20],
-    },
-    goalParameters: {
-      goalPerGame: [0, 20],
-    },
+    heightParameters: { height: [150, 250] },
+    ageParameters: { age: [10, 100] },
+    minutesParameters: { minutes: [0, 90] },
+    goalParameters: { goalPerGame: [0, 20] },
   };
 
-  const [filters, setFilters] = useState<Filters>(defaultFilters);
+  const defaultData = {
+    countries: [],
+    leagues: [],
+    positionGroups: defaultPositionGroups,
+    positions: defaultPositions,
+    teams: [],
+    players: [],
+  };
+
+  const [data, setData] = useState(defaultData);
+
+  useEffect(() => {
+    (async () => {
+      const { API_NAME, paths } = config.api;
+      const { POPULATE_COUNTRIES_LEAGUES } = paths;
+      const request = {};
+
+      try {
+        const response = await API.get(API_NAME, POPULATE_COUNTRIES_LEAGUES, request);
+        console.log(response);
+
+        if (response && response.countries) {
+          const tmpCountries: any = [];
+          const tmpLeagues: any = [];
+
+          response.countries.forEach((country: any) => {
+            tmpCountries.push(country.name);
+            country.leagues.forEach((league: any) => {
+              tmpLeagues.push({
+                name: league.name,
+                leagueId: league.leagueId,
+                country: country.name,
+              });
+            });
+          });
+
+          console.log({ ...data, countries: tmpCountries, leagues: tmpLeagues });
+          setData({ ...data, countries: tmpCountries, leagues: tmpLeagues });
+        }
+      } catch (err) {
+        console.log(err, err.request);
+      }
+    })();
+  }, []);
+
+  const [filters, setFilters] = useState(defaultFilters);
   const [expanded, setExpanded] = useState('');
 
   const handleAccordion = (panel: string) => (
@@ -69,7 +112,12 @@ const AnalysisFilters: FunctionComponent = () => {
           </Typography>
         </AccordionSummary>
         <AccordionDetails>
-          <CountryAndLeauge filters={filters} setFilters={setFilters} />
+          <CountryAndLeauge
+            filters={filters}
+            setFilters={setFilters}
+            data={data}
+            setData={setData}
+          />
         </AccordionDetails>
       </Accordion>
 
@@ -135,7 +183,7 @@ const AnalysisFilters: FunctionComponent = () => {
           </Typography>
         </AccordionSummary>
         <AccordionDetails>
-          <TeamAndPlayer filters={filters} setFilters={setFilters} />
+          <TeamAndPlayer filters={filters} setFilters={setFilters} data={data} setData={setData} />
         </AccordionDetails>
       </Accordion>
 
@@ -153,11 +201,11 @@ const AnalysisFilters: FunctionComponent = () => {
         >
           <Typography className={classes.heading}>
             <img src={ageGroups} alt='year' className={classes.icons} />
-            Year(Birthday)
+            Age
           </Typography>
         </AccordionSummary>
         <AccordionDetails>
-          <Year />
+          <Age filters={filters} setFilters={setFilters} />
         </AccordionDetails>
       </Accordion>
 
@@ -186,28 +234,6 @@ const AnalysisFilters: FunctionComponent = () => {
       <Accordion
         TransitionProps={{ unmountOnExit: true }}
         square={true}
-        expanded={expanded === 'pace'}
-        onChange={handleAccordion('pace')}
-      >
-        <AccordionSummary
-          expandIcon={<ExpandMore />}
-          aria-controls='pace'
-          id='pace'
-          className={classes.accordionItem}
-        >
-          <Typography className={classes.heading}>
-            <img src={pace} alt='paceIcon' className={classes.icons} />
-            Pace
-          </Typography>
-        </AccordionSummary>
-        <AccordionDetails>
-          <Pace />
-        </AccordionDetails>
-      </Accordion>
-
-      <Accordion
-        TransitionProps={{ unmountOnExit: true }}
-        square={true}
         expanded={expanded === 'minutes'}
         onChange={handleAccordion('minutes')}
       >
@@ -223,7 +249,7 @@ const AnalysisFilters: FunctionComponent = () => {
           </Typography>
         </AccordionSummary>
         <AccordionDetails>
-          <Minutes filters={filters} setFilters={setFilters}/>
+          <Minutes filters={filters} setFilters={setFilters} />
         </AccordionDetails>
       </Accordion>
 
@@ -245,10 +271,9 @@ const AnalysisFilters: FunctionComponent = () => {
           </Typography>
         </AccordionSummary>
         <AccordionDetails>
-          <GoalPerGame filters={filters} setFilters={setFilters}/>
+          <GoalPerGame filters={filters} setFilters={setFilters} />
         </AccordionDetails>
       </Accordion>
-
     </Fragment>
   );
 };

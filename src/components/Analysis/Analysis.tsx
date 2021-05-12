@@ -1,11 +1,14 @@
-import { FunctionComponent, Fragment, useState } from 'react';
-import clsx from 'clsx';
-import FilterDrawer from '../FilterDrawer/FilterDrawer';
-import makeStyles from './makeStyles';
 import Grid from '@material-ui/core/Grid';
 import Typography from '@material-ui/core/Typography';
+import clsx from 'clsx';
+import { Fragment, FunctionComponent, useState } from 'react';
+import FilterDrawer from '../FilterDrawer/FilterDrawer';
 import AnalysisFilters from './AnalysisFilters';
+import AnalysisTable from './AnalysisTable';
+import makeStyles from './makeStyles';
 import Scatter1 from './Scatters/Scatter1';
+import Scatter10 from './Scatters/Scatter10';
+import Scatter11 from './Scatters/Scatter11';
 import Scatter2 from './Scatters/Scatter2';
 import Scatter3 from './Scatters/Scatter3';
 import Scatter4 from './Scatters/Scatter4';
@@ -14,16 +17,11 @@ import Scatter6 from './Scatters/Scatter6';
 import Scatter7 from './Scatters/Scatter7';
 import Scatter8 from './Scatters/Scatter8';
 import Scatter9 from './Scatters/Scatter9';
-import Scatter10 from './Scatters/Scatter10';
-import Scatter11 from './Scatters/Scatter11';
-import AnalysisTable from './AnalysisTable';
 
 const Analysis: FunctionComponent = () => {
   const classes = makeStyles();
   const [drawerOpen, setDrawerOpen] = useState(true);
-/*
-new line
-*/
+
   return (
     <Fragment>
       <main

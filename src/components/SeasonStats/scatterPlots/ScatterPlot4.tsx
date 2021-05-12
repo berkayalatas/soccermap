@@ -15,14 +15,14 @@ const useStyles = makeStyles((theme) => ({
       width: theme.spacing(45),
       height: theme.spacing(45),
     },
-    padding:5
+    padding: 5,
   },
   paper: {
     display: 'flex',
     justifyContent: 'center',
     alignItems: 'center',
     borderRadius: 20,
-    width:"100%"
+    width: '100%',
   },
 }));
 
@@ -44,29 +44,29 @@ const ScatterPlot4: FunctionComponent = () => {
           yFormat={function (e) {
             return e + ' cm';
           }}
-          colors={['#5C5F58' ]}
+          colors={['#5C5F58']}
           blendMode='multiply'
           axisTop={null}
           nodeSize={5}
           axisRight={null}
-          axisBottom={{
-            orient: 'bottom',
-            tickSize: 5,
-            tickPadding: 5,
-            tickRotation: 0,
-            legend: 'weight',
-            legendPosition: 'middle',
-            legendOffset: 40,
-          }}
-          axisLeft={{
-            orient: 'left',
-            tickSize: 5,
-            tickPadding: 5,
-            tickRotation: 0,
-            legend: 'size',
-            legendPosition: 'middle',
-            legendOffset: -50,
-          }}
+          // axisBottom={{
+          //   orient: 'bottom',
+          //   tickSize: 5,
+          //   tickPadding: 5,
+          //   tickRotation: 0,
+          //   legend: 'weight',
+          //   legendPosition: 'middle',
+          //   legendOffset: 40,
+          // }}
+          // axisLeft={{
+          //   orient: 'left',
+          //   tickSize: 5,
+          //   tickPadding: 5,
+          //   tickRotation: 0,
+          //   legend: 'size',
+          //   legendPosition: 'middle',
+          //   legendOffset: -50,
+          // }}
           legends={[]}
         />
       </Paper>

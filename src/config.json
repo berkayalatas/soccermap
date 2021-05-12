@@ -1,0 +1,14 @@
+  {
+    "api": {
+      "API_NAME": "soccermap-API",
+      "ENDPOINT": "https://neq8sbt93k.execute-api.eu-central-1.amazonaws.com/dev1",
+      "paths": {
+        "GET_COUNTRIES": "/getcountries",
+        "GET_LEAGUES": "/getleagues",
+        "GET_PLAYERS": "/getplayers",
+        "GET_PLAYER_STATS": "/getplayerstats",
+        "GET_TEAMS": "/getteams",
+        "POPULATE_COUNTRIES_LEAGUES": "/populateCountriesLeagues"
+      }
+    }
+  }

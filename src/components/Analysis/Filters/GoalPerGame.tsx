@@ -3,7 +3,7 @@ import { Slider, Typography } from '@material-ui/core';
 import { FiltersProps } from './interfaces';
 import makeStyles from '../makeStyles';
 
-const GoalPerGame: FunctionComponent<FiltersProps> = ({ filters, setFilters }) => {
+const GoalPerGame = ({ filters, setFilters }: any) => {
   const classes = makeStyles();
 
   // eslint-disable-next-line @typescript-eslint/no-explicit-any
@@ -22,7 +22,7 @@ const GoalPerGame: FunctionComponent<FiltersProps> = ({ filters, setFilters }) =
       {/* Goal Per Game / Game */}
       <div className={classes.sliderContainer}>
         <Typography id='minutes-slider' gutterBottom className={classes.sliderTitle}>
-         Goal Per Game
+          Goal Per Game
         </Typography>
         <Slider
           value={filters.goalParameters.goalPerGame}

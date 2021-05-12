@@ -1,4 +1,4 @@
-import { FunctionComponent, useState } from 'react';
+import React, { FunctionComponent, useState } from 'react';
 import { BrowserRouter, Switch, Route } from 'react-router-dom';
 import { AppContext } from './context/AppContext';
 import {
@@ -17,7 +17,6 @@ import {
   SeasonStats,
 } from './components';
 import { Toolbar } from '@material-ui/core';
- 
 
 const App: FunctionComponent = () => {
   const [app, setApp] = useState({

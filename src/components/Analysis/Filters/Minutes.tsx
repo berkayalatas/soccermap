@@ -1,10 +1,9 @@
-import { Fragment, FunctionComponent } from 'react';
 import { Slider, Typography } from '@material-ui/core';
-import { FiltersProps } from './interfaces';
+import { Fragment } from 'react';
 import makeStyles from '../makeStyles';
 
 // eslint-disable-next-line @typescript-eslint/no-unused-vars
-const Minutes: FunctionComponent<FiltersProps> = ({ filters, setFilters }) => {
+const Minutes = ({ filters, setFilters }: any) => {
   const classes = makeStyles();
 
   // eslint-disable-next-line @typescript-eslint/no-explicit-any
@@ -23,7 +22,7 @@ const Minutes: FunctionComponent<FiltersProps> = ({ filters, setFilters }) => {
       {/* minutes / Game */}
       <div className={classes.sliderContainer}>
         <Typography id='minutes-slider' gutterBottom className={classes.sliderTitle}>
-         Minutes
+          Minutes
         </Typography>
         <Slider
           value={filters.minutesParameters.minutes}

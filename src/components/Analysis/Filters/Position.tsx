@@ -10,15 +10,14 @@ import {
 } from '@material-ui/core';
 import { FiltersProps, SelectChangeEvent } from './interfaces';
 import makeStyles from '../makeStyles';
+import { defaultPositions } from '../defaultData';
 
-const Position: FunctionComponent<FiltersProps> = ({ filters, setFilters }) => {
+const Position = ({ filters, setFilters }: any) => {
   const classes = makeStyles();
+  const positionsList = defaultPositions;
 
   const handleChange: SelectChangeEvent = (event) => {
-    setFilters({
-      ...filters,
-      positions: event.target.value as string[],
-    });
+    setFilters({ ...filters, positions: event.target.value as string[] });
   };
 
   return (
@@ -36,22 +35,13 @@ const Position: FunctionComponent<FiltersProps> = ({ filters, setFilters }) => {
         input={<Input />}
         renderValue={(selected) => (selected as string[]).join(', ')}
       >
-        <MenuItem value={'Forward'}>
-          <Checkbox
-            size='small'
-            color='primary'
-            checked={filters.positions.indexOf('Forward') > -1}
-          />
-          <ListItemText primary={'Forward'} />
-        </MenuItem>
-        <MenuItem value={'Defense'}>
-          <Checkbox
-            size='small'
-            color='primary'
-            checked={filters.positions.indexOf('Defense') > -1}
-          />
-          <ListItemText primary={'Defense'} />
-        </MenuItem>
+        {positionsList &&
+          positionsList.map((p, index) => (
+            <MenuItem key={index} value={p}>
+              <Checkbox size='small' color='primary' checked={filters.positions.indexOf(p) > -1} />
+              <ListItemText primary={p} />
+            </MenuItem>
+          ))}
       </Select>
     </FormControl>
   );

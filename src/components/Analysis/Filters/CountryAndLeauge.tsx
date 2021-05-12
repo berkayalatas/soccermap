@@ -1,32 +1,48 @@
 import {
+  Checkbox,
   FormControl,
+  Input,
   InputLabel,
+  ListItemText,
   MenuItem,
   Select,
-  Checkbox,
-  ListItemText,
-  Input,
 } from '@material-ui/core';
-import { Fragment, FunctionComponent } from 'react';
+import config from '../../../config.json';
+import { Fragment, useState } from 'react';
 import makeStyles from '../makeStyles';
-import { FiltersProps, SelectChangeEvent } from './interfaces';
+import { SelectChangeEvent } from './interfaces';
+import { API } from 'aws-amplify';
 
-const CountryAndLeauge: FunctionComponent<FiltersProps> = ({ filters, setFilters }) => {
+const CountryAndLeauge = ({ filters, setFilters, data, setData }: any) => {
   const classes = makeStyles();
+  const [leaguesList, setLeaguesList] = useState(data.leagues);
 
   const handleCountryChange: SelectChangeEvent = (event) => {
-    setFilters({
-      ...filters,
-      country: event.target.value as string,
-      leauges: [],
-    });
+    const value = event.target.value;
+
+    setFilters({ ...filters, country: value as string, leauges: [] });
+    setLeaguesList(data.leagues.filter((o: any) => o.country === value));
   };
 
-  const handleLeaugeChange: SelectChangeEvent = (event) => {
-    setFilters({
-      ...filters,
-      leauges: event.target.value as string[],
-    });
+  const handleLeaugeChange: SelectChangeEvent = async (event) => {
+    const value = event.target.value;
+    const newFilters = { ...filters, leauges: value as string[] };
+    setFilters(newFilters);
+
+    const { API_NAME, paths } = config.api;
+    const { GET_TEAMS } = paths;
+
+    let teamsList: any = [];
+
+    await Promise.all(
+      newFilters.leauges.map(async (leagueId: number) => {
+        const request = { queryStringParameters: { leagueId } };
+        const response = await API.get(API_NAME, GET_TEAMS, request);
+        teamsList = [...teamsList, ...response.teams];
+      }),
+    );
+
+    setData({ ...data, teams: teamsList });
   };
 
   return (
@@ -42,9 +58,12 @@ const CountryAndLeauge: FunctionComponent<FiltersProps> = ({ filters, setFilters
           value={filters.country}
           onChange={handleCountryChange}
         >
-          <MenuItem value={'Germany'}>Germany</MenuItem>
-          <MenuItem value={'France'}>France</MenuItem>
-          <MenuItem value={'Italy'}>Italy</MenuItem>
+          {data.countries &&
+            data.countries.map((country: any, index: number) => (
+              <MenuItem key={index} value={country}>
+                {country}
+              </MenuItem>
+            ))}
         </Select>
       </FormControl>
       <FormControl className={classes.select}>
@@ -59,24 +78,20 @@ const CountryAndLeauge: FunctionComponent<FiltersProps> = ({ filters, setFilters
           value={filters.leauges}
           onChange={handleLeaugeChange}
           input={<Input />}
-          renderValue={(selected) => (selected as string[]).join(', ')}
+          renderValue={(_v) => ''}
+          //renderValue={(selected) => (selected as string[]).join(', ')}
         >
-          <MenuItem value={'Süper Lig'}>
-            <Checkbox
-              size='small'
-              color='primary'
-              checked={filters.leauges.indexOf('Süper Lig') > -1}
-            />
-            <ListItemText primary={'Süper Lig'} />
-          </MenuItem>
-          <MenuItem value={'TFF 1. Lig'}>
-            <Checkbox
-              size='small'
-              color='primary'
-              checked={filters.leauges.indexOf('TFF 1. Lig') > -1}
-            />
-            <ListItemText primary={'TFF 1. Lig'} />
-          </MenuItem>
+          {leaguesList &&
+            leaguesList.map(({ leagueId, name }: any) => (
+              <MenuItem key={leagueId} value={leagueId}>
+                <Checkbox
+                  size='small'
+                  color='primary'
+                  checked={filters.leauges.indexOf(leagueId) > -1}
+                />
+                <ListItemText primary={name} />
+              </MenuItem>
+            ))}
         </Select>
       </FormControl>
     </Fragment>

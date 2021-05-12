@@ -3,6 +3,8 @@ import { makeStyles } from '@material-ui/core/styles';
 import Checkbox, { CheckboxProps } from '@material-ui/core/Checkbox';
 import FormControlLabel from '@material-ui/core/FormControlLabel';
 import { useState } from 'react';
+import { defaultPositionGroups } from '../defaultData';
+import { Style } from '@material-ui/icons';
 
 const useStyles = makeStyles({
   root: {
@@ -49,7 +51,7 @@ const useStyles = makeStyles({
 });
 
 // Inspired by blueprintjs
-function StyledCheckbox(props: CheckboxProps) {
+function StyledCheckbox({ text }: any) {
   const classes = useStyles();
 
   const [checked, setChecked] = useState(false);
@@ -57,7 +59,6 @@ function StyledCheckbox(props: CheckboxProps) {
   const handlePositionGroups = (event: React.ChangeEvent<HTMLInputElement>) => {
     setChecked(event.target.checked);
   };
-
 
   return (
     <FormControlLabel
@@ -71,10 +72,9 @@ function StyledCheckbox(props: CheckboxProps) {
           inputProps={{ 'aria-label': 'decorative checkbox' }}
           checked={checked}
           onChange={handlePositionGroups}
-          {...props}
         />
       }
-      label= {`Position Group 1`}
+      label={text}
       style={{ color: '#fff' }}
     />
   );
@@ -82,10 +82,15 @@ function StyledCheckbox(props: CheckboxProps) {
 
 // eslint-disable-next-line @typescript-eslint/explicit-module-boundary-types
 export default function PositionGroups() {
+  const positionGroupsList = defaultPositionGroups;
   return (
     <div>
-      <StyledCheckbox />
-      {/* <StyledCheckbox /> */}
+      {positionGroupsList &&
+        positionGroupsList.map((pg, index) => (
+          <div key={index}>
+            <StyledCheckbox key={index} text={pg} />
+          </div>
+        ))}
     </div>
   );
 }

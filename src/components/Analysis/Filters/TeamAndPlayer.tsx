@@ -1,25 +1,39 @@
 import {
+  Checkbox,
   FormControl,
+  Input,
   InputLabel,
+  ListItemText,
   MenuItem,
   Select,
-  Checkbox,
-  ListItemText,
-  Input,
 } from '@material-ui/core';
-import { Fragment, FunctionComponent } from 'react';
-import { FiltersProps, SelectChangeEvent } from './interfaces';
+import { API } from 'aws-amplify';
+import { Fragment } from 'react';
+import config from '../../../config.json';
 import makeStyles from '../makeStyles';
+import { SelectChangeEvent } from './interfaces';
 
-const TeamAndPlayer: FunctionComponent<FiltersProps> = ({ filters, setFilters }) => {
+const TeamAndPlayer = ({ filters, setFilters, data, setData }: any) => {
   const classes = makeStyles();
 
-  const handleTeamChange: SelectChangeEvent = (event) => {
-    setFilters({
-      ...filters,
-      team: event.target.value as string,
-      players: [],
-    });
+  const teamsList = data.teams;
+  const playersList = data.players;
+  console.log(playersList);
+
+  const handleTeamChange: SelectChangeEvent = async (event) => {
+    const value = event.target.value;
+    setFilters({ ...filters, team: value as string, players: [] });
+
+    const { API_NAME, paths } = config.api;
+    const { GET_PLAYERS } = paths;
+    const request = { queryStringParameters: { teamId: value } };
+
+    try {
+      const { players } = await API.get(API_NAME, GET_PLAYERS, request);
+      setData({ ...data, players });
+    } catch (err) {
+      console.log(err, err.request);
+    }
   };
 
   const handlePlayerChange: SelectChangeEvent = (event) => {
@@ -32,7 +46,9 @@ const TeamAndPlayer: FunctionComponent<FiltersProps> = ({ filters, setFilters })
   return (
     <Fragment>
       <FormControl className={classes.select}>
-        <InputLabel id='team-select-label' style={{ color: '#fff' }}>Team</InputLabel>
+        <InputLabel id='team-select-label' style={{ color: '#fff' }}>
+          Team
+        </InputLabel>
         <Select
           labelId='team-select-label'
           label='Team'
@@ -40,12 +56,18 @@ const TeamAndPlayer: FunctionComponent<FiltersProps> = ({ filters, setFilters })
           value={filters.team}
           onChange={handleTeamChange}
         >
-          <MenuItem value={'Besiktas'}>Besiktas</MenuItem>
-          <MenuItem value={'Galatasaray'}>Galatasaray</MenuItem>
+          {teamsList &&
+            teamsList.map(({ name, teamId }: any) => (
+              <MenuItem key={teamId} value={teamId}>
+                {name}
+              </MenuItem>
+            ))}
         </Select>
       </FormControl>
       <FormControl className={classes.select}>
-        <InputLabel id='players-select-label' style={{ color: '#fff' }}>Players</InputLabel>
+        <InputLabel id='players-select-label' style={{ color: '#fff' }}>
+          Players
+        </InputLabel>
         <Select
           labelId='players-select-label'
           label='Players'
@@ -54,16 +76,20 @@ const TeamAndPlayer: FunctionComponent<FiltersProps> = ({ filters, setFilters })
           value={filters.players}
           onChange={handlePlayerChange}
           input={<Input />}
-          renderValue={(selected) => (selected as string[]).join(', ')}
+          renderValue={(_v) => ''}
+          //renderValue={(selected) => (selected as string[]).join(', ')}
         >
-          <MenuItem value={'Hakan Çalhanoğlu'}>
-            <Checkbox size='small' color="primary" checked={filters.players.indexOf('Hakan Çalhanoğlu') > -1} />
-            <ListItemText primary={'Hakan Çalhanoğlu'} />
-          </MenuItem>
-          <MenuItem value={'Cenk Tosun'}>
-            <Checkbox size='small' color="primary" checked={filters.players.indexOf('Cenk Tosun') > -1} />
-            <ListItemText primary={'Cenk Tosun'} />
-          </MenuItem>
+          {playersList &&
+            playersList.map(({ name, playerId }: any) => (
+              <MenuItem key={playerId} value={playerId}>
+                <Checkbox
+                  size='small'
+                  color='primary'
+                  checked={filters.players.indexOf(playerId) > -1}
+                />
+                <ListItemText primary={name} />
+              </MenuItem>
+            ))}
         </Select>
       </FormControl>
     </Fragment>
